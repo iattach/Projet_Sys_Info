@@ -3,5 +3,9 @@ int main(){
     double b;
     float c;
     b = a + 2; 
-    b /;    
+    b /;
+    *;
+    - 9;
+    float 2.0;
+            
 }

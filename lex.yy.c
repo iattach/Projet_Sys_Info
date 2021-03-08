@@ -775,17 +775,17 @@ printf("col d ");
 case 6:
 YY_RULE_SETUP
 #line 9 "al.l"
-printf("int ");
+printf("integer ");
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 10 "al.l"
-printf("float ");
+printf("flt ");
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 11 "al.l"
-printf("double ");
+printf("dbl ");
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
