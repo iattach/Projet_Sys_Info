@@ -1,34 +1,7 @@
-%code requires {
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <string.h>
-    #include <stdarg.h>
-    #include <math.h>
-    #include "table_symbol.h"
-    #include "table_function.h"
-}
-
 %{
-
     #include <stdio.h>
     #include <stdlib.h>
-    #include <string.h>
-    #include <stdarg.h>
-    #include "table_symbol.h"
-    #include "table_function.h"
-
-    int yylex(void);
-    int yydebug = 1;
-
-    int cmpt_error = 0;
-    void yyerror (char const *s) {
-        extern int yylineno;
-        fprintf (stderr, "ERROR (%d): %s\n", yylineno, s);
-        cmpt_error++;
-    }
-
-    
-
+    #include <math.h>
 %}
 
 %union{
@@ -46,7 +19,7 @@
 %token  tSEMCOL tSEP
 %token  tMain tRET tWHILE tIF tELSE tCONST tPRINTF
 %token  tCMP tINF tSUP tINFEQUAL tSUPEQUAL
-%token  tFLOAT tArg tNOTEQUAL
+
 
 %left tSEP 
 %right tEQUAL tADD tSUB tMUL tDIV 
@@ -60,32 +33,44 @@
 
 S:          FunctionMain {printf("Function main\n");}
             ;
-FunctionMain: tMain {printf("tMain ");} tOB{printf("tOB ");} tCB {printf("tCB ");} Body 
+FunctionMain:tMain {printf("tMain ");} tOB{printf("tOB ");} tCB {printf("tCB ");} Body 
             |
             ;
 
-Body:       tOA {printf("tOA ");} Declaration Contenus tCA{printf("tCA ");} ;
+Vide:       ;
 
-Contenus:   Instruction Contenus
-            | 
+Arg:        Type tVAR Args
+            |Vide
             ;
-Instruction:     Aff 
-            |Print ;
-
-Declaration:Type VarsAff  Vars tSEMCOL {printf("Declaration \n");} Declaration | 
+            
+Args:       tSEP Arg 
+            |Vide
             ;
 
 Type:       tINT {printf("int ");}
             |tCHAR {printf("char ");}
             ;
 
-Vars:       tSEP VarsAff Vars 
-            | Vide
-            ;
-VarsAff:    tVAR | Aff
+Body:       tOA {printf("tOA ");} Contenus tCA{printf("tCA ");} 
             ;
 
-Vide:       ;
+Contenus:   Contenu Contenus
+            |Contenu
+            ;
+
+Contenu:     Aff 
+            |Print
+            |Declaration;
+
+Declaration:Type tVAR Vars tSEMCOL {printf("Declaration \n");}
+            ;
+
+Vars:       tSEP tVAR Vars 
+            |Vide
+            ;
+
+Print:      tPRINTF tOB tVAR tCB tSEMCOL {printf("tPrintf \n ");}
+            ;
 
 Aff:        tVAR tEQUAL E tSEMCOL {printf("Affectation \n");}
             ;
@@ -101,15 +86,13 @@ Exp:        E tADD E {printf(" + ");}
             |E tSUB E  {printf(" - ");}
             |E tMUL E {printf(" x ");}
             |E tDIV E {printf(" / ");}
-            ;   
-
-Print:      tPRINTF tOB tVAR tCB tSEMCOL {printf("tPrintf \n ");}
-            ;
-
-      
+            ;           
 
 %%
+void yyerror(char *s){
+printf("%s\n",s);
+
+}
 int main(void){
     yyparse();
-    
 }

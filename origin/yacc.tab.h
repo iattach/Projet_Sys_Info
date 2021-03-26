@@ -74,7 +74,10 @@ extern int yydebug;
     tINF = 284,
     tSUP = 285,
     tINFEQUAL = 286,
-    tSUPEQUAL = 287
+    tSUPEQUAL = 287,
+    tFLOAT = 288,
+    tArg = 289,
+    tNOTEQUAL = 290
   };
 #endif
 
@@ -83,13 +86,13 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 7 "yacc.y" /* yacc.c:1909  */
+#line 17 "yacc.y" /* yacc.c:1909  */
 
     char *str;
     int number;
     float reel;
 
-#line 93 "yacc.tab.h" /* yacc.c:1909  */
+#line 96 "yacc.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

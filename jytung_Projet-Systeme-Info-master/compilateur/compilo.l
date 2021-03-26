@@ -1,6 +1,6 @@
 %{
     #include <stdlib.h>
-    #include "yacc.tab.h"
+    #include "y.tab.h"
 %}
 
 SPACE       [" "]+
@@ -11,7 +11,7 @@ NUMBER      {DIGIT}+
 EXP         [eE][+-]?{NUMBER}
 REAL        {NUMBER}("."{NUMBER})?{EXP}?
 ALPHABET    [A-Za-z]
-ALPHANUM    {ALPHABET}({ALPHABET}|{NUMBER}|"_")*
+ALPHANUM    {ALPHABET}({ALPHABET}|{NUMBER}|"_")*?
 
 %%
 {SPACE}     {}
@@ -28,6 +28,7 @@ ALPHANUM    {ALPHABET}({ALPHABET}|{NUMBER}|"_")*
 "const"     {return (tCONST);}
 "char"      {return (tCHAR);}
 "float"     {return (tFLOAT);}
+"void"      {return (tVOID);}
 "+"         {return (tADD);}
 "-"         {return (tSUB);}
 "*"         {return (tMUL);}
@@ -57,4 +58,8 @@ ALPHANUM    {ALPHABET}({ALPHABET}|{NUMBER}|"_")*
 .           {return (tERROR);}
 
 %%
-int yywrap(){return 1;}
+int yywrap(void){
+    return 1;
+}
+
+
