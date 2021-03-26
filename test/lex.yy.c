@@ -763,22 +763,22 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 4 "al.l"
-printf("v ");
+printf("func ");
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 5 "al.l"
-printf("name ");
+printf("nom ");
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 6 "al.l"
-printf("col g ");
+printf("col_g ");
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 7 "al.l"
-printf("col d ");
+printf("col_d ");
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
@@ -818,12 +818,12 @@ printf("divise ");
 case 12:
 YY_RULE_SETUP
 #line 19 "al.l"
-printf("par g ");
+printf("par_g ");
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 20 "al.l"
-printf("par d ");
+printf("par_d ");
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
@@ -849,24 +849,24 @@ YY_RULE_SETUP
 case 18:
 YY_RULE_SETUP
 #line 28 "al.l"
-printf("pv");
+printf("pv ");
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
 #line 30 "al.l"
-printf("prin");
+printf("prin ");
 	YY_BREAK
 case 20:
 #line 33 "al.l"
 case 21:
 YY_RULE_SETUP
 #line 33 "al.l"
-printf( "integer ") ;
+printf( "entier ") ;
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
 #line 34 "al.l"
-printf("real "); 
+printf("reel "); 
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
@@ -880,7 +880,7 @@ printf("mot ");
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 39 "al.l"
+#line 40 "al.l"
 ECHO;
 	YY_BREAK
 #line 887 "lex.yy.c"
@@ -1888,7 +1888,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 39 "al.l"
+#line 40 "al.l"
 
 int yywrap(){return 1;}
 int main(){yylex();return 0;}

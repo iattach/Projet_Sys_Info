@@ -33,13 +33,13 @@
 
 S:          FunctionMain {printf("Function main\n");}
             ;
-FunctionMain:tMain {printf("tMain ");} tOB{printf("tOB ");} tCB {printf("tCB ");} Body 
+FunctionMain: tMain {printf("tMain ");} tOB{printf("tOB ");} tCB {printf("tCB ");} Body 
             |
             ;
 
 Vide:       ;
 
-Arg:        Type tVAR Args
+Arg:        Type tVAR Args 
             |Vide
             ;
             
