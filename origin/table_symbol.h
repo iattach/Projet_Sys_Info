@@ -1,49 +1,21 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
+#ifndef TABLE_SYMBOL_H
+#define TABLE_SYMBOL_H
 
 //indice de tableau = address
-typedef struct{
-	char* name;	//nom de variable
-	unsigned int depth; // porte de variable
-    int isInitialised;
-    int isConstant; //=1 		
-} symbol;
+struct symbol
+{
+  char id[256];//nom de variable
+  int depth;//porte de variable
+  int constant;
+  int initialized;
+  int pointer;
+  int function_id;
+};
 
-int pushSymbol(char* name, int isConstant, int depth);
+int push_symbol(const char *id, int depth, int constant, int pointer, int func_id);
 
-int pushTmp( );
 
-void popSymbol();
+int find_symbol(const char *id, int depth, int func_id);
 
-int popTmp();
 
-//return the last symbol read by the parser
-symbol getLastSymbol();
-
-//return address of the temporary variable
-int getaddrtmp();
-
-//return 1 if the symbol is initialised
-//else return 0
-int isInitialised(char* name,int depth);
-
-int setInitialised (char* name,int depth);
-
-//return index(address) if the symbol is found in the symbolTable
-//else return 0
-int findSymbol(char* name,int depth);
-
-//return 1 if the symbol is constant
-//else return 0
-int isConstant(char* name,int depth);
-
-//print symbol table
-void printSymbolTable();
-
-void printTmpTable();
-
-//return sommet de la pile
-int get_last();
-
+#endif

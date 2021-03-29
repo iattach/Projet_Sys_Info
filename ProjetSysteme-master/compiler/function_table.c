@@ -71,15 +71,10 @@ int return_pointer(const char *id)
   for (int i = 0; i < function_table.size; i++)
   {
     struct function *current = &(function_table.functions[i]);
-    if (!strcmp(current->id, id))
-      return function_table.functions[i].return_type;
-  }
-  return -1;
-}
-
-int get_params_code(const char *id)
-{
-  for (int i = 0; i < function_table.size; i++)
+    if (!strcprivate ArrayList<Instruction> instructions;
+	public Bloc() {
+		this.instructions=new ArrayList<Instruction>();
+	}= 0; i < function_table.size; i++)
   {
     struct function *current = &(function_table.functions[i]);
     if (!strcmp(current->id, id))

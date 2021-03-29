@@ -3,7 +3,6 @@
     #include <stdlib.h>
     #include <string.h>
     #include <stdarg.h>
-    #include <math.h>
     #include "table_symbol.h"
     #include "table_function.h"
 }
@@ -27,7 +26,11 @@
         cmpt_error++;
     }
 
-    
+    extern FILE * yyin;
+    FILE *output_file = NULL;
+
+    int current_depth = 0;
+    int current_func = -1;
 
 %}
 
@@ -53,18 +56,19 @@
 %left tCMP 
 %left tINF tSUP tINFEQUAL tSUPEQUAL
 
+%type <number> Type
 
 
 %start S 
 %%
 
-S:          FunctionMain {printf("Function main\n");}
+S:          FunctionMain 
             ;
-FunctionMain: tMain {printf("tMain ");} tOB{printf("tOB ");} tCB {printf("tCB ");} Body 
+FunctionMain: tMain  tOB tCB  Body
             |
             ;
 
-Body:       tOA {printf("tOA ");} Declaration Contenus tCA{printf("tCA ");} ;
+Body:       tOA  Declaration Contenus tCA ;
 
 Contenus:   Instruction Contenus
             | 
@@ -72,44 +76,58 @@ Contenus:   Instruction Contenus
 Instruction:     Aff 
             |Print ;
 
-Declaration:Type VarsAff  Vars tSEMCOL {printf("Declaration \n");} Declaration | 
+Declaration:Type VarsAff  
+            {
+                $1;
+                int adr = push_symbol($2, current_depth, 0, 0, current_func);
+            }Vars tSEMCOL  Declaration | 
             ;
-
-Type:       tINT {printf("int ");}
-            |tCHAR {printf("char ");}
+	
+            ;
+Type:       tINT { $$ = 1; }
+            |tCHAR { $$ = 2; }
             ;
 
 Vars:       tSEP VarsAff Vars 
             | Vide
             ;
-VarsAff:    tVAR | Aff
+VarsAff:    tVAR 
+            {
+                
+            }| Aff
             ;
 
 Vide:       ;
 
-Aff:        tVAR tEQUAL E tSEMCOL {printf("Affectation \n");}
+Aff:        tVAR tEQUAL E tSEMCOL 
             ;
 
-E:          tREAL {printf("tREAL ");}
-            |tNUMBER  {printf("tNUMBER ");}
-            |tVAR  {printf("tVAR ");}
+E:          tREAL 
+            |tNUMBER  
+            |tVAR  
             |tOB E tCB
             |Exp
             ;
 
-Exp:        E tADD E {printf(" + ");}
-            |E tSUB E  {printf(" - ");}
-            |E tMUL E {printf(" x ");}
-            |E tDIV E {printf(" / ");}
+Exp:        E tADD E 
+            |E tSUB E  
+            |E tMUL E 
+            |E tDIV E 
             ;   
 
-Print:      tPRINTF tOB tVAR tCB tSEMCOL {printf("tPrintf \n ");}
+Print:      tPRINTF tOB tVAR tCB tSEMCOL 
             ;
 
       
 
 %%
-int main(void){
+int main(int argc, char *argv[]){
+    printf("test1");
+    yyin=fopen(argv[1],"r");
+    if(argc>2){
+        output_file=fopen(argv[2],"w");
+    }
     yyparse();
-    
+    printf("test");
+    return 0; 
 }
