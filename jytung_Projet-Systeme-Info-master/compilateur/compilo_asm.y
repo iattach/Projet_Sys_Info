@@ -34,15 +34,7 @@
         else if(strcmp(condition,">=")==0){
             newAddr= pushTmp();
             add_instruction("EQU",newAddr ,first,second); 
-            add_instruction("SUP",first ,first,second); 
-            add_instruction("ADD",first ,first,newAddr); 
-        }
-        else if(strcmp(condition,"<=")==0){
-            newAddr= pushTmp();
-            add_instruction("INF",newAddr ,first,second); 
-            add_instruction("EQU",first ,first,second); 
-            add_instruction("ADD",first ,first,newAddr); 
-        }
+            add_yacc
         else if(strcmp(condition,">")==0){
             add_instruction("SUP",first ,first,second); 
         }
@@ -68,12 +60,7 @@
     float reel;
 }
 
-%token<number>  tNUMBER 
-%token<reel> tREAL
-%token<str> tVAR
-%token  tDIV tMUL tADD tSUB  tEQUAL
-%token  tOB tCB tOA tCA
-%token  tINT tCHAR tVOID tERROR tFLOAT
+%token<number>  yaccAR tVOID tERROR tFLOAT
 %token  tSEMCOL tSEP
 %token  tMain tRET tCONST tPRINTF
 %token<number> tIF tWHILE tELSE
