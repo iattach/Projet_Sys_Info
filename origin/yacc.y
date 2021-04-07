@@ -70,7 +70,9 @@ Contenus:   Instruction Contenus
             | 
             ;
 Instruction:     Aff 
-            |Print ;
+            |Print
+            |IfStatement
+            |IfElseStatement;
 
 Declaration:Type VarsAff  Vars tSEMCOL {printf("Declaration \n");} Declaration | 
             ;
@@ -101,12 +103,18 @@ Exp:        E tADD E {printf(" + ");}
             |E tSUB E  {printf(" - ");}
             |E tMUL E {printf(" x ");}
             |E tDIV E {printf(" / ");}
+            |E tCMP E {printf(" == ");}
+
             ;   
 
 Print:      tPRINTF tOB tVAR tCB tSEMCOL {printf("tPrintf \n ");}
             ;
 
-      
+IfStatement:
+            tIF {printf("tIF ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB    {printf(" ) ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } \n");} 
+
+IfElseStatement:
+            tIF {printf("tIF ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB {printf(" ) ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } ");} |tELSE {printf("tELSE ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } \n");} 
 
 %%
 int main(void){
