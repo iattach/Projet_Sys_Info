@@ -79,6 +79,7 @@ Instruction:     Aff
 Declaration:Type VarsAff  
             {
                 $1;
+                int adr = push_symbol($2, current_depth, 0, 0, current_func);
             }Vars tSEMCOL  Declaration | 
             ;
 	
@@ -92,8 +93,7 @@ Vars:       tSEP VarsAff Vars
             ;
 VarsAff:    tVAR 
             {
-                int adr = push_symbol($1, current_depth, 0, 0, current_func);
-                //display_table();
+                
             }| Aff
             ;
 

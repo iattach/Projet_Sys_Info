@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_YY_YACC_ASM_TAB_H_INCLUDED
-# define YY_YY_YACC_ASM_TAB_H_INCLUDED
+#ifndef YY_YY_YACC_TAB_H_INCLUDED
+# define YY_YY_YACC_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -40,16 +40,17 @@
 extern int yydebug;
 #endif
 /* "%code requires" blocks.  */
-#line 1 "yacc_asm.y" /* yacc.c:1909  */
+#line 1 "yacc.y" /* yacc.c:1909  */
 
     #include <stdio.h>
     #include <stdlib.h>
     #include <string.h>
     #include <stdarg.h>
+    #include <math.h>
     #include "table_symbol.h"
     #include "table_function.h"
 
-#line 53 "yacc_asm.tab.h" /* yacc.c:1909  */
+#line 54 "yacc.tab.h" /* yacc.c:1909  */
 
 /* Token type.  */
 #ifndef YYTOKENTYPE
@@ -97,13 +98,13 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 37 "yacc_asm.y" /* yacc.c:1909  */
+#line 34 "yacc.y" /* yacc.c:1909  */
 
     char *str;
     int number;
     float reel;
 
-#line 107 "yacc_asm.tab.h" /* yacc.c:1909  */
+#line 108 "yacc.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -116,4 +117,4 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_YACC_ASM_TAB_H_INCLUDED  */
+#endif /* !YY_YY_YACC_TAB_H_INCLUDED  */

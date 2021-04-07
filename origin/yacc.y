@@ -4,6 +4,8 @@
     #include <string.h>
     #include <stdarg.h>
     #include <math.h>
+    #include "table_symbol.h"
+    #include "table_function.h"
 }
 
 %{
@@ -12,6 +14,9 @@
     #include <stdlib.h>
     #include <string.h>
     #include <stdarg.h>
+    #include "table_symbol.h"
+    #include "table_function.h"
+
     int yylex(void);
     int yydebug = 1;
 
@@ -106,5 +111,5 @@ Print:      tPRINTF tOB tVAR tCB tSEMCOL {printf("tPrintf \n ");}
 %%
 int main(void){
     yyparse();
-    return 0;
+    
 }
