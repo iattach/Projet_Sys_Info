@@ -1,8 +1,14 @@
 main()
-{ int a = 20 , b ,c , d ;
-a = 10 ;
-b = a ;
-c = 50 ;
-d = (b+c)/a ;
-
+{ int i, j,k ,r;
+i =3 ;
+j=4 ;
+k=8 ;
+printf (i) ;
+r=(i+j)*(i+k/j) ;
+printf ( r ) ;
+if(i==3){i=i+1;}
+if(i==3){i=i+1;}else{i=i+2;}
+while(i<3){printf(i);i=i+3;}
 }
+
+

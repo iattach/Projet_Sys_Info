@@ -65,7 +65,11 @@ Contenus:   Instruction Contenus
             | 
             ;
 Instruction:     Aff 
-            |Print ;
+            |Print Instruction |
+            |IfStatement Instruction |
+            |IfElseStatement Instruction |
+            |WhileLoop Instruction |
+            ;
 
 Declaration:Type VarsAff  Vars tSEMCOL {printf("Declaration \n");} Declaration | 
             ;
@@ -96,13 +100,26 @@ Exp:        E tADD E {printf(" + ");}
             |E tSUB E  {printf(" - ");}
             |E tMUL E {printf(" x ");}
             |E tDIV E {printf(" / ");}
+            |E tCMP E {printf(" == ");}
+            |E tINF E {printf(" < ");}
+            |E tSUP E {printf(" > ");}
+            |E tINFEQUAL E {printf(" <= ");}
+            |E tSUPEQUAL E {printf(" >= ");}
+            |E tNOTEQUAL E {printf(" != ");}
+
             ;   
 
 Print:      tPRINTF tOB tVAR tCB tSEMCOL {printf("tPrintf \n ");}
             ;
 
-      
+IfStatement:
+            tIF {printf("tIF ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB    {printf(" ) ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } \n");} 
 
+IfElseStatement:
+            tIF {printf("tIF ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB {printf(" ) ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } ");} |tELSE {printf("tELSE ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } \n");} 
+
+WhileLoop:
+            tWHILE {printf("tWHILE ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB {printf(" ) ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } \n");} 
 %%
 int main(void){
     yyparse();
