@@ -53,29 +53,29 @@ int get_last_index(){
 
 void set_initialized(const char* id, int depth,int func_id){
 	int adr = find_symbol(id,depth,func_id);
-	map.symbols[adr].initialise = 1;
+	map.symbols[adr].initialized = 1;
 }
 int is_initialized(const char *id, int depth, int func_id){
     int adr = find_symbol(id, depth, func_id);
-    return symbol_table.symbols[adr].initialized;
+    return map.symbols[adr].initialized;
 }
 
 int is_const(const char *id, int depth, int func_id){
     int adr = find_symbol(id, depth, func_id);
-    return symbol_table.symbols[adr].constant;
+    return map.symbols[adr].constant;
 }
 
 int is_pointer(int index){
-  return symbol_table.symbols[index].pointer;
+  return map.symbols[index].pointer;
 }
 
 void clear_symbols_by_func(int func_id){
   int fin = 0;
   while(fin == 0) {
-      struct symbol *last = &(symbol_table.symbols[symbol_table.size - 1]);
+      struct symbol *last = &(map.symbols[map.size - 1]);
       if (last->function_id == func_id) {
         pop_symbol();
-        if(symbol_table.size == 0) {
+        if(map.size == 0) {
           fin = 1;
         }
       } else {
@@ -87,10 +87,10 @@ void clear_symbols_by_func(int func_id){
 void clear_symbols_by_depth(int depth){
   int fin = 0;
   while(fin == 0) {
-      struct symbol *last = &(symbol_table.symbols[symbol_table.size - 1]);
+      struct symbol *last = &(map.symbols[map.size - 1]);
       if (last->depth == depth) {
         pop_symbol();
-        if(symbol_table.size == 0) {
+        if(map.size == 0) {
           fin = 1;
         }
       } else {
@@ -101,9 +101,9 @@ void clear_symbols_by_depth(int depth){
 
 void display_table(){
     printf("Symbol table :\n");
-    for (int i = 0; i < symbol_table.size; i++)
+    for (int i = 0; i < map.size; i++)
     {
-        struct symbol *current = &(symbol_table.symbols[i]);
+        struct symbol *current = &(map.symbols[i]);
         int depth = current->depth;
         printf("index=%d\t", i);
         printf("id=%s\tconst=%d\tinit=%d\tdepth=%d\tfunc_id=%d\tpointer=%d\n",
@@ -114,4 +114,3 @@ void display_table(){
     }
     printf("\n");
 }
-)
