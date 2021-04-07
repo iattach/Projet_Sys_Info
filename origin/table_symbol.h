@@ -18,7 +18,7 @@ int find_symbol(const char *id, int depth, int func_id);
 
 void pop_symbol();
 
-int get_last_symbol();
+int get_last_index();
 
 void set_initialized(const char *id, int depth, int func_id);
 
