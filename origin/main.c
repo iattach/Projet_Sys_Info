@@ -6,9 +6,9 @@ k=8 ;
 printf (i) ;
 r=(i+j)*(i+k/j) ;
 printf ( r ) ;
-
 if(i==3){i=i+1;}
 if(i==3){i=i+1;}else{i=i+2;}
+while(i<3){printf(i);i=i+3;}
 }
 
 
