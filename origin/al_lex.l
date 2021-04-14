@@ -1,6 +1,6 @@
 %{
     #include <stdlib.h>
-    #include "yacc.tab.h"
+    #include "yacc_asm.tab.h"
 %}
 
 SPACE       [" "]+
