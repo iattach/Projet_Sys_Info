@@ -1,7 +1,12 @@
 %{
     #include <stdlib.h>
+    #include <string.h>
     #include "yacc.tab.h"
+    #include "table_symbol.h"
 %}
+
+%option noyywrap
+%option yylineno
 
 SPACE       [" "]+
 TAB         [\t]+
@@ -50,11 +55,11 @@ ALPHANUM    {ALPHABET}({ALPHABET}|{NUMBER}|"_")*
              return (tNUMBER);}
 {REAL}      {yylval.reel=atof(yytext);
              return (tREAL);} 
-{ALPHANUM}  {yylval.str=yytext;
+{ALPHANUM}  {strcpy(yylval.str,yytext);
              return (tVAR);}
 
 
 .           {return (tERROR);}
 
 %%
-int yywrap(){return 1;}
+

@@ -47,10 +47,8 @@ extern int yydebug;
     #include <string.h>
     #include <stdarg.h>
     #include <math.h>
-    #include "table_symbol.h"
-    #include "table_function.h"
 
-#line 54 "yacc.tab.h" /* yacc.c:1909  */
+#line 52 "yacc.tab.h" /* yacc.c:1909  */
 
 /* Token type.  */
 #ifndef YYTOKENTYPE
@@ -98,13 +96,13 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 34 "yacc.y" /* yacc.c:1909  */
+#line 29 "yacc.y" /* yacc.c:1909  */
 
     char *str;
     int number;
     float reel;
 
-#line 108 "yacc.tab.h" /* yacc.c:1909  */
+#line 106 "yacc.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

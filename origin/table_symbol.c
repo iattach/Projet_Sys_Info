@@ -33,12 +33,18 @@ int push_symbol(const char *id, int depth, int constant, int pointer, int func_i
 }
 
 int find_symbol(const char *id, int depth, int func_id){
+    //printf("find symbol %s\n",id);
     for (int i = 0; i < map.size; i++)
     {
         struct symbol *current = &(map.symbols[i]);
-        if (current->depth <= depth && current->function_id == func_id)
-            if (!strcmp(current->id, id))
-                return i;
+        if (current->depth <= depth && current->function_id == func_id){
+          //printf("find symbol compare %s | %s\n",current->id,id);
+          if (!strcmp(current->id, id)){
+            return i;
+          }
+                
+        }
+            
     }
     return -1;
 }
@@ -104,7 +110,6 @@ void display_table(){
     for (int i = 0; i < map.size; i++)
     {
         struct symbol *current = &(map.symbols[i]);
-        int depth = current->depth;
         printf("index=%d\t", i);
         printf("id=%s\tconst=%d\tinit=%d\tdepth=%d\tfunc_id=%d\tpointer=%d\n",
           current->id, current->constant,
