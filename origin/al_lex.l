@@ -3,10 +3,6 @@
     #include "yacc.tab.h"
 %}
 
-%option noyywrap
-%option yylineno
-
-
 SPACE       [" "]+
 TAB         [\t]+
 NEWLINE     [\n]+
@@ -54,11 +50,11 @@ ALPHANUM    {ALPHABET}({ALPHABET}|{NUMBER}|"_")*
              return (tNUMBER);}
 {REAL}      {yylval.reel=atof(yytext);
              return (tREAL);} 
-{ALPHANUM}  {strcpy(yylval.str,yytext);
+{ALPHANUM}  {yylval.str=yytext;
              return (tVAR);}
 
 
 .           {return (tERROR);}
 
 %%
-
+int yywrap(){return 1;}

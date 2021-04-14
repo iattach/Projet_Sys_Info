@@ -5,9 +5,6 @@
     #include "table_symbol.h"
 %}
 
-%option noyywrap
-%option yylineno
-
 SPACE       [" "]+
 TAB         [\t]+
 NEWLINE     [\n]+
@@ -62,4 +59,4 @@ ALPHANUM    {ALPHABET}({ALPHABET}|{NUMBER}|"_")*
 .           {return (tERROR);}
 
 %%
-
+int yywrap(){return 1;}

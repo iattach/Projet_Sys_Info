@@ -55,7 +55,7 @@
 
 S:          FunctionMain {printf("Function main\n");}
             ;
-FunctionMain: tMain {printf("tMain ");} tOB{printf("tOB ");} tCB {printf("tCB ");} Body 
+FunctionMain: tMain {printf("tMain ");} tOB {printf("tOB ");} tCB {printf("tCB ");} Body 
             |
             ;
 
@@ -70,7 +70,8 @@ Instruction:     Aff
             |WhileLoop
             ;
 
-Declaration:tINT tVAR  Aff_after_declaration Multi_Declaration  
+Declaration:tINT tVAR  Aff_after_declaration Multi_Declaration
+            |
             ;
 
 Aff_after_declaration:

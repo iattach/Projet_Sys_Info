@@ -115,7 +115,9 @@
 %start S 
 %%
 
-S:          FunctionMain 
+S:          FunctionMain {
+                printf("test");
+            }
             ;
 FunctionMain: tMain  tOB tCB  Body
             |
@@ -137,21 +139,22 @@ Declaration:tINT tVAR
                 update_last_var($2);
                 int adr = push_symbol($2, current_depth, 0, 0, current_func);
                 printf("push symbol: %s\n",$2);
-            }Aff_after_declaration Multi_Declaration  
+            }Aff_after_declaration Multi_Declaration
+            |
             ;
 
 Aff_after_declaration:
             tEQUAL E 
             { 
-                add_affectation(last_var_read); 
-                pop_symbol(); 
+                //add_affectation(last_var_read); 
+                //pop_symbol(); 
             } 
             |
             ;
 
 Multi_Declaration:  tSEP tVAR{
-                update_last_var($2);
-                int adr = push_symbol($2, current_depth, 0, 0, current_func);
+               // update_last_var($2);
+               // int adr = push_symbol($2, current_depth, 0, 0, current_func);
             } 
             Aff_after_declaration Multi_Declaration 
             | tSEMCOL
