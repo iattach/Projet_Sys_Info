@@ -46,7 +46,7 @@
 %left tSEP 
 %right tEQUAL tADD tSUB tMUL tDIV 
 %left tCMP 
-%left tINF tSUP tINFEQUAL tSUPEQUAL
+%left tINF tSUP tINFEQUAL tSUPEQUAL tNOTEQUAL
 
 
 
@@ -110,7 +110,7 @@ Print:      tPRINTF tOB tVAR tCB tSEMCOL {printf("tPrintf \n ");}
             ;
 
 IfStatement:
-            tIF tOB {printf("tIF ( ");} Exp {printf("Exp ");} tCB {printf(") ");} 
+            tIF E
                 Body
             ElseStatement
             ;
@@ -122,7 +122,7 @@ ElseStatement:
             ;
 
 WhileLoop:
-            tWHILE {printf("tWHILE ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB {printf(" ) ");} 
+            tWHILE {printf("tWHILE ");} E
                 Body
             ;
 %%

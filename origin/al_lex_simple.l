@@ -1,7 +1,7 @@
 %{
     #include <stdlib.h>
     #include <string.h>
-    #include "yacc.tab.h"
+    #include "yacc_asm.tab.h"
     #include "table_symbol.h"
 %}
 

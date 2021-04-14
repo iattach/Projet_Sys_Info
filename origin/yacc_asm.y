@@ -127,7 +127,10 @@ Contenus:   Instruction Contenus
             | 
             ;
 Instruction:     Aff 
-            |Print ;
+            |Print
+            |IfStatement
+            |WhileLoop 
+            ;
 
 Declaration:tINT tVAR  
             {
@@ -192,15 +195,21 @@ Print:      tPRINTF tOB tVAR tCB tSEMCOL
             ;
 
 IfStatement:
-            tIF tOB Exp tCB tOA Instruction tCA
+            tIF tOB {printf("tIF ( ");} Exp {printf("Exp ");} tCB {printf(") ");} 
+                Body
+            ElseStatement
             ;
 
-IfElseStatement:
-            tIF tOB Exp tCB tOA Instruction tCA 
-            |tELSE tOA Instruction tCA
+ElseStatement:
+            tELSE {printf("tELSE ");} 
+                Body
+            |
+            ;
 
 WhileLoop:
-            tWHILE tOB Exp tCB tOA Instruction tCA 
+            tWHILE {printf("tWHILE ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB {printf(" ) ");} 
+                Body
+            ;
       
 
 %%

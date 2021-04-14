@@ -3,7 +3,13 @@
     #include "yacc.tab.h"
 %}
 
-spaces [ \t\n]+
+%option noyywrap
+%option yylineno
+
+
+SPACE       [" "]+
+TAB         [\t]+
+NEWLINE     [\n]+
 DIGIT       [0-9]
 NUMBER      {DIGIT}+
 EXP         [eE][+-]?{NUMBER}
@@ -12,7 +18,9 @@ ALPHABET    [A-Za-z]
 ALPHANUM    {ALPHABET}({ALPHABET}|{NUMBER}|"_")*
 
 %%
-{spaces} ;
+{SPACE}     {}
+{TAB}       {}
+{NEWLINE}   {}
 
 
 "main"      {return (tMain);}
@@ -46,13 +54,11 @@ ALPHANUM    {ALPHABET}({ALPHABET}|{NUMBER}|"_")*
              return (tNUMBER);}
 {REAL}      {yylval.reel=atof(yytext);
              return (tREAL);} 
-{ALPHANUM}  {
-            strcpy(yylval.str,yytext);
-             return (tVAR);
-            }
+{ALPHANUM}  {strcpy(yylval.str,yytext);
+             return (tVAR);}
 
 
 .           {return (tERROR);}
 
 %%
-int yywrap(){return 1;}
+
