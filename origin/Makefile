@@ -14,7 +14,7 @@ test:
 	gcc -c table_symbol.c -Wall 
 	gcc -c table_function.c -Wall 
 	gcc -Wall yacc_asm.tab.o lex.yy.o table_symbol.o table_function.o -o comp
-	./comp main.c
+	./comp < main.c
 simple:
 	bison -d yacc.y
 	flex al_lex_simple.l

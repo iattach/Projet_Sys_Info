@@ -65,28 +65,25 @@ Contenus:   Instruction Contenus
             | 
             ;
 Instruction:     Aff 
-            |Print Instruction |
-            |IfStatement Instruction |
-            |IfElseStatement Instruction |
-            |WhileLoop Instruction |
+            |Print
+            |IfStatement
+            |WhileLoop
             ;
 
-Declaration:Type VarsAff  Vars tSEMCOL {printf("Declaration \n");} Declaration | 
+Declaration:tINT tVAR  Aff_after_declaration Multi_Declaration  
             ;
 
-Type:       tINT {printf("int ");}
-            |tCHAR {printf("char ");}
+Aff_after_declaration:
+            tEQUAL E 
+            | 
             ;
 
-Vars:       tSEP VarsAff Vars 
-            | Vide
-            ;
-VarsAff:    tVAR | Aff
+Multi_Declaration:  tSEP tVAR
+            Aff_after_declaration Multi_Declaration 
+            | tSEMCOL
             ;
 
-Vide:       ;
-
-Aff:        tVAR tEQUAL E tSEMCOL {printf("Affectation \n");}
+Aff:        tVAR tEQUAL E tSEMCOL
             ;
 
 E:          tREAL {printf("tREAL ");}
@@ -113,13 +110,21 @@ Print:      tPRINTF tOB tVAR tCB tSEMCOL {printf("tPrintf \n ");}
             ;
 
 IfStatement:
-            tIF {printf("tIF ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB    {printf(" ) ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } \n");} 
+            tIF tOB {printf("tIF ( ");} Exp {printf("Exp ");} tCB {printf(") ");} 
+                Body
+            ElseStatement
+            ;
 
-IfElseStatement:
-            tIF {printf("tIF ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB {printf(" ) ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } ");} |tELSE {printf("tELSE ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } \n");} 
+ElseStatement:
+            tELSE {printf("tELSE ");} 
+                Body
+            |
+            ;
 
 WhileLoop:
-            tWHILE {printf("tWHILE ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB {printf(" ) ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } \n");} 
+            tWHILE {printf("tWHILE ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB {printf(" ) ");} 
+                Body
+            ;
 %%
 int main(void){
     yyparse();

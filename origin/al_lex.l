@@ -47,9 +47,8 @@ ALPHANUM    {ALPHABET}({ALPHABET}|{NUMBER}|"_")*
 {REAL}      {yylval.reel=atof(yytext);
              return (tREAL);} 
 {ALPHANUM}  {
-            yylval.str=malloc(sizeof(yyleng));
             strcpy(yylval.str,yytext);
-            return (tVAR);
+             return (tVAR);
             }
 
 

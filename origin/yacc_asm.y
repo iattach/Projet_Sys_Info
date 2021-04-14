@@ -143,7 +143,7 @@ Aff_after_declaration:
                 add_affectation(last_var_read); 
                 pop_symbol(); 
             } 
-            | Vide
+            |
             ;
 
 Multi_Declaration:  tSEP tVAR{
@@ -153,8 +153,6 @@ Multi_Declaration:  tSEP tVAR{
             Aff_after_declaration Multi_Declaration 
             | tSEMCOL
             ;
-
-Vide:       ;
 
 Aff:        tVAR tEQUAL E tSEMCOL{
                 int constant = is_const($1, current_depth, current_func);
@@ -194,13 +192,15 @@ Print:      tPRINTF tOB tVAR tCB tSEMCOL
             ;
 
 IfStatement:
-            tIF {printf("tIF ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB    {printf(" ) ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } \n");} 
+            tIF tOB Exp tCB tOA Instruction tCA
+            ;
 
 IfElseStatement:
-            tIF {printf("tIF ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB {printf(" ) ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } ");} |tELSE {printf("tELSE ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } \n");} 
+            tIF tOB Exp tCB tOA Instruction tCA 
+            |tELSE tOA Instruction tCA
 
 WhileLoop:
-            tWHILE {printf("tWHILE ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB {printf(" ) ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } \n");} 
+            tWHILE tOB Exp tCB tOA Instruction tCA 
       
 
 %%
