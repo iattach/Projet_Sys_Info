@@ -193,6 +193,14 @@ Exp:        E tADD E { add_operation("ADD"); }
 Print:      tPRINTF tOB tVAR tCB tSEMCOL 
             ;
 
+IfStatement:
+            tIF {printf("tIF ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB    {printf(" ) ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } \n");} 
+
+IfElseStatement:
+            tIF {printf("tIF ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB {printf(" ) ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } ");} |tELSE {printf("tELSE ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } \n");} 
+
+WhileLoop:
+            tWHILE {printf("tWHILE ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB {printf(" ) ");} tOA {printf(" { ");} Instruction {printf("Instruction ");} tCA {printf(" } \n");} 
       
 
 %%
