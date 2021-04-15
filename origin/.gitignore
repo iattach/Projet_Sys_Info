@@ -1,0 +1,7 @@
+comp* 
+lex.yy.* 
+yacc_asm.tab.* 
+*.o 
+*.output 
+*.asm 
+yacc.tab.* 
