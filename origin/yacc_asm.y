@@ -84,10 +84,14 @@
         add_to_output("%s %d %d %d",operator,adr_first,adr_first,adr_second);
         pop_symbol();
     }
-
+    void add_to_instruction(char *instruction, int line) {
+        char buffer[32];
+        sprintf(buffer, "%d", line);
+        strcpy(instruction, strcat(instruction, buffer));
+    }
     void add_condition(char * operation_code) {
-      int adr_first_operand = get_last_symbol()-1;
-      int adr_second_operand = get_last_symbol();
+      int adr_first_operand = get_last_index()-1;
+      int adr_second_operand = get_last_index();
       int new_adr;
       if(strcmp(operation_code,"==")==0) {
         add_to_output("EQU %d %d %d",adr_first_operand,adr_first_operand,adr_second_operand);
@@ -131,6 +135,7 @@
     float reel;
 }
 
+%type<number> Test
 %token<number>  tNUMBER 
 %token<reel> tREAL
 %token<str> tVAR
@@ -173,7 +178,8 @@ Declaration:tINT tVAR
                 update_last_var($2);
                 int adr = push_symbol($2, current_depth, 0, 0, current_func);
                 printf("push symbol: %s\n",$2);
-            }Aff_after_declaration Multi_Declaration  
+            }Aff_after_declaration Multi_Declaration 
+            |
             ;
 
 Aff_after_declaration:
@@ -236,28 +242,60 @@ Exp:        E tADD E {
             |E tNOTEQUAL E {add_condition("!=");}
             ;   
 
-Print:      tPRINTF tOB tVAR tCB tSEMCOL 
+Print:      tPRINTF tOB tVAR tCB tSEMCOL {
+                int adr = find_symbol($3,current_depth,current_func);
+                add_to_output("PRI %d",adr);
+            }
             ;
 
 IfStatement:
             tIF tOB Exp {
                 int adr_res_condition = get_last_index();
-                add_to_output("JMF %d",adr_res_condition);
+                add_to_output("JMF %d ",adr_res_condition);
                 pop_symbol();
-            }tCB 
-                Body
-            ElseStatement
+            }tCB Test tOA  {
+                current_depth ++ ;
+            }
+            Declaration Contenus {
+                add_to_output("JMP ");
+                add_to_instruction(output.instructions[$6], output.last_line);
+            }
+            tCA { 
+                    clear_symbols_by_depth(current_depth); 
+                    current_depth--; 
+            } Test
+            ElseStatement {
+                add_to_instruction(output.instructions[$14], output.last_line);
+            }
+            ;
+Test:       {
+                $$ = output.last_line - 1 ;
+            }
             ;
 
 ElseStatement:
             tELSE 
-                Body
+            tOA  {current_depth ++ ;}
+                Declaration Contenus {
+                    clear_symbols_by_depth(current_depth); 
+                    current_depth--; 
+                }
+            tCA
             |
             ;
 
 WhileLoop:
-            tWHILE 
-                Body
+            tWHILE Test tOB Exp tCB  {
+                    int adr_condition_result = get_last_index();
+                    add_to_output("JMF %d ", adr_condition_result);
+                    pop_symbol();
+            }
+            Test tOA  { current_depth++; } Declaration Contenus {
+                add_to_instruction(output.instructions[$7], output.last_line+1);
+                add_to_output("JMP %d", $2+1);
+            }
+            tCA { clear_symbols_by_depth(current_depth); current_depth--; }
+
             ;
       
 
