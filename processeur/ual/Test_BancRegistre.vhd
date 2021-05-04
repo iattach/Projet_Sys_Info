@@ -121,7 +121,7 @@ BEGIN
 		addrW <= x"A";
 		wait for CLK_period*3;
 		
-		
+
       wait;
    end process;
 
