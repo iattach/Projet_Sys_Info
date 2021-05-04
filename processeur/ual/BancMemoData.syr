@@ -1,0 +1,636 @@
+Release 13.4 - xst O.87xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: BancMemoData.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "BancMemoData.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "BancMemoData"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : BancMemoData
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+INFO:Xst - Part-select index evaluated to out of bound value may lead to incorrect synthesis results; it is recommended not to use them in RTL
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/BancMemoData.vhd" into library work
+Parsing entity <BancMemoData>.
+Parsing architecture <Behavioral> of entity <bancmemodata>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <BancMemoData> (architecture <Behavioral>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <BancMemoData>.
+    Related source file is "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/BancMemoData.vhd".
+    Found 8-bit register for signal <Data<1>>.
+    Found 8-bit register for signal <Data<2>>.
+    Found 8-bit register for signal <Data<3>>.
+    Found 8-bit register for signal <Data<4>>.
+    Found 8-bit register for signal <Data<5>>.
+    Found 8-bit register for signal <Data<6>>.
+    Found 8-bit register for signal <Data<7>>.
+    Found 8-bit register for signal <Data<8>>.
+    Found 8-bit register for signal <Data<9>>.
+    Found 8-bit register for signal <Data<10>>.
+    Found 8-bit register for signal <Data<11>>.
+    Found 8-bit register for signal <Data<12>>.
+    Found 8-bit register for signal <Data<13>>.
+    Found 8-bit register for signal <Data<14>>.
+    Found 8-bit register for signal <Data<15>>.
+    Found 8-bit register for signal <Data<16>>.
+    Found 8-bit register for signal <Data<17>>.
+    Found 8-bit register for signal <Data<18>>.
+    Found 8-bit register for signal <Data<19>>.
+    Found 8-bit register for signal <Data<20>>.
+    Found 8-bit register for signal <Data<21>>.
+    Found 8-bit register for signal <Data<22>>.
+    Found 8-bit register for signal <Data<23>>.
+    Found 8-bit register for signal <Data<24>>.
+    Found 8-bit register for signal <Data<25>>.
+    Found 8-bit register for signal <Data<26>>.
+    Found 8-bit register for signal <Data<27>>.
+    Found 8-bit register for signal <Data<28>>.
+    Found 8-bit register for signal <Data<29>>.
+    Found 8-bit register for signal <Data<30>>.
+    Found 8-bit register for signal <Data<31>>.
+    Found 8-bit register for signal <Data<32>>.
+    Found 8-bit register for signal <Data<33>>.
+    Found 8-bit register for signal <Data<34>>.
+    Found 8-bit register for signal <Data<35>>.
+    Found 8-bit register for signal <Data<36>>.
+    Found 8-bit register for signal <Data<37>>.
+    Found 8-bit register for signal <Data<38>>.
+    Found 8-bit register for signal <Data<39>>.
+    Found 8-bit register for signal <Data<40>>.
+    Found 8-bit register for signal <Data<41>>.
+    Found 8-bit register for signal <Data<42>>.
+    Found 8-bit register for signal <Data<43>>.
+    Found 8-bit register for signal <Data<44>>.
+    Found 8-bit register for signal <Data<45>>.
+    Found 8-bit register for signal <Data<46>>.
+    Found 8-bit register for signal <Data<47>>.
+    Found 8-bit register for signal <Data<48>>.
+    Found 8-bit register for signal <Data<49>>.
+    Found 8-bit register for signal <Data<50>>.
+    Found 8-bit register for signal <Data<51>>.
+    Found 8-bit register for signal <Data<52>>.
+    Found 8-bit register for signal <Data<53>>.
+    Found 8-bit register for signal <Data<54>>.
+    Found 8-bit register for signal <Data<55>>.
+    Found 8-bit register for signal <Data<56>>.
+    Found 8-bit register for signal <Data<57>>.
+    Found 8-bit register for signal <Data<58>>.
+    Found 8-bit register for signal <Data<59>>.
+    Found 8-bit register for signal <Data<60>>.
+    Found 8-bit register for signal <Data<61>>.
+    Found 8-bit register for signal <Data<62>>.
+    Found 8-bit register for signal <Data<63>>.
+    Found 8-bit register for signal <Data<64>>.
+    Found 8-bit register for signal <Data<65>>.
+    Found 8-bit register for signal <Data<66>>.
+    Found 8-bit register for signal <Data<67>>.
+    Found 8-bit register for signal <Data<68>>.
+    Found 8-bit register for signal <Data<69>>.
+    Found 8-bit register for signal <Data<70>>.
+    Found 8-bit register for signal <Data<71>>.
+    Found 8-bit register for signal <Data<72>>.
+    Found 8-bit register for signal <Data<73>>.
+    Found 8-bit register for signal <Data<74>>.
+    Found 8-bit register for signal <Data<75>>.
+    Found 8-bit register for signal <Data<76>>.
+    Found 8-bit register for signal <Data<77>>.
+    Found 8-bit register for signal <Data<78>>.
+    Found 8-bit register for signal <Data<79>>.
+    Found 8-bit register for signal <Data<80>>.
+    Found 8-bit register for signal <Data<81>>.
+    Found 8-bit register for signal <Data<82>>.
+    Found 8-bit register for signal <Data<83>>.
+    Found 8-bit register for signal <Data<84>>.
+    Found 8-bit register for signal <Data<85>>.
+    Found 8-bit register for signal <Data<86>>.
+    Found 8-bit register for signal <Data<87>>.
+    Found 8-bit register for signal <Data<88>>.
+    Found 8-bit register for signal <Data<89>>.
+    Found 8-bit register for signal <Data<90>>.
+    Found 8-bit register for signal <Data<91>>.
+    Found 8-bit register for signal <Data<92>>.
+    Found 8-bit register for signal <Data<93>>.
+    Found 8-bit register for signal <Data<94>>.
+    Found 8-bit register for signal <Data<95>>.
+    Found 8-bit register for signal <Data<96>>.
+    Found 8-bit register for signal <Data<97>>.
+    Found 8-bit register for signal <Data<98>>.
+    Found 8-bit register for signal <Data<99>>.
+    Found 8-bit register for signal <Data<100>>.
+    Found 8-bit register for signal <Data<101>>.
+    Found 8-bit register for signal <Data<102>>.
+    Found 8-bit register for signal <Data<103>>.
+    Found 8-bit register for signal <Data<104>>.
+    Found 8-bit register for signal <Data<105>>.
+    Found 8-bit register for signal <Data<106>>.
+    Found 8-bit register for signal <Data<107>>.
+    Found 8-bit register for signal <Data<108>>.
+    Found 8-bit register for signal <Data<109>>.
+    Found 8-bit register for signal <Data<110>>.
+    Found 8-bit register for signal <Data<111>>.
+    Found 8-bit register for signal <Data<112>>.
+    Found 8-bit register for signal <Data<113>>.
+    Found 8-bit register for signal <Data<114>>.
+    Found 8-bit register for signal <Data<115>>.
+    Found 8-bit register for signal <Data<116>>.
+    Found 8-bit register for signal <Data<117>>.
+    Found 8-bit register for signal <Data<118>>.
+    Found 8-bit register for signal <Data<119>>.
+    Found 8-bit register for signal <Data<120>>.
+    Found 8-bit register for signal <Data<121>>.
+    Found 8-bit register for signal <Data<122>>.
+    Found 8-bit register for signal <Data<123>>.
+    Found 8-bit register for signal <Data<124>>.
+    Found 8-bit register for signal <Data<125>>.
+    Found 8-bit register for signal <Data<126>>.
+    Found 8-bit register for signal <Data<127>>.
+    Found 8-bit register for signal <Data<128>>.
+    Found 8-bit register for signal <Data<129>>.
+    Found 8-bit register for signal <Data<130>>.
+    Found 8-bit register for signal <Data<131>>.
+    Found 8-bit register for signal <Data<132>>.
+    Found 8-bit register for signal <Data<133>>.
+    Found 8-bit register for signal <Data<134>>.
+    Found 8-bit register for signal <Data<135>>.
+    Found 8-bit register for signal <Data<136>>.
+    Found 8-bit register for signal <Data<137>>.
+    Found 8-bit register for signal <Data<138>>.
+    Found 8-bit register for signal <Data<139>>.
+    Found 8-bit register for signal <Data<140>>.
+    Found 8-bit register for signal <Data<141>>.
+    Found 8-bit register for signal <Data<142>>.
+    Found 8-bit register for signal <Data<143>>.
+    Found 8-bit register for signal <Data<144>>.
+    Found 8-bit register for signal <Data<145>>.
+    Found 8-bit register for signal <Data<146>>.
+    Found 8-bit register for signal <Data<147>>.
+    Found 8-bit register for signal <Data<148>>.
+    Found 8-bit register for signal <Data<149>>.
+    Found 8-bit register for signal <Data<150>>.
+    Found 8-bit register for signal <Data<151>>.
+    Found 8-bit register for signal <Data<152>>.
+    Found 8-bit register for signal <Data<153>>.
+    Found 8-bit register for signal <Data<154>>.
+    Found 8-bit register for signal <Data<155>>.
+    Found 8-bit register for signal <Data<156>>.
+    Found 8-bit register for signal <Data<157>>.
+    Found 8-bit register for signal <Data<158>>.
+    Found 8-bit register for signal <Data<159>>.
+    Found 8-bit register for signal <Data<160>>.
+    Found 8-bit register for signal <Data<161>>.
+    Found 8-bit register for signal <Data<162>>.
+    Found 8-bit register for signal <Data<163>>.
+    Found 8-bit register for signal <Data<164>>.
+    Found 8-bit register for signal <Data<165>>.
+    Found 8-bit register for signal <Data<166>>.
+    Found 8-bit register for signal <Data<167>>.
+    Found 8-bit register for signal <Data<168>>.
+    Found 8-bit register for signal <Data<169>>.
+    Found 8-bit register for signal <Data<170>>.
+    Found 8-bit register for signal <Data<171>>.
+    Found 8-bit register for signal <Data<172>>.
+    Found 8-bit register for signal <Data<173>>.
+    Found 8-bit register for signal <Data<174>>.
+    Found 8-bit register for signal <Data<175>>.
+    Found 8-bit register for signal <Data<176>>.
+    Found 8-bit register for signal <Data<177>>.
+    Found 8-bit register for signal <Data<178>>.
+    Found 8-bit register for signal <Data<179>>.
+    Found 8-bit register for signal <Data<180>>.
+    Found 8-bit register for signal <Data<181>>.
+    Found 8-bit register for signal <Data<182>>.
+    Found 8-bit register for signal <Data<183>>.
+    Found 8-bit register for signal <Data<184>>.
+    Found 8-bit register for signal <Data<185>>.
+    Found 8-bit register for signal <Data<186>>.
+    Found 8-bit register for signal <Data<187>>.
+    Found 8-bit register for signal <Data<188>>.
+    Found 8-bit register for signal <Data<189>>.
+    Found 8-bit register for signal <Data<190>>.
+    Found 8-bit register for signal <Data<191>>.
+    Found 8-bit register for signal <Data<192>>.
+    Found 8-bit register for signal <Data<193>>.
+    Found 8-bit register for signal <Data<194>>.
+    Found 8-bit register for signal <Data<195>>.
+    Found 8-bit register for signal <Data<196>>.
+    Found 8-bit register for signal <Data<197>>.
+    Found 8-bit register for signal <Data<198>>.
+    Found 8-bit register for signal <Data<199>>.
+    Found 8-bit register for signal <Data<200>>.
+    Found 8-bit register for signal <Data<201>>.
+    Found 8-bit register for signal <Data<202>>.
+    Found 8-bit register for signal <Data<203>>.
+    Found 8-bit register for signal <Data<204>>.
+    Found 8-bit register for signal <Data<205>>.
+    Found 8-bit register for signal <Data<206>>.
+    Found 8-bit register for signal <Data<207>>.
+    Found 8-bit register for signal <Data<208>>.
+    Found 8-bit register for signal <Data<209>>.
+    Found 8-bit register for signal <Data<210>>.
+    Found 8-bit register for signal <Data<211>>.
+    Found 8-bit register for signal <Data<212>>.
+    Found 8-bit register for signal <Data<213>>.
+    Found 8-bit register for signal <Data<214>>.
+    Found 8-bit register for signal <Data<215>>.
+    Found 8-bit register for signal <Data<216>>.
+    Found 8-bit register for signal <Data<217>>.
+    Found 8-bit register for signal <Data<218>>.
+    Found 8-bit register for signal <Data<219>>.
+    Found 8-bit register for signal <Data<220>>.
+    Found 8-bit register for signal <Data<221>>.
+    Found 8-bit register for signal <Data<222>>.
+    Found 8-bit register for signal <Data<223>>.
+    Found 8-bit register for signal <Data<224>>.
+    Found 8-bit register for signal <Data<225>>.
+    Found 8-bit register for signal <Data<226>>.
+    Found 8-bit register for signal <Data<227>>.
+    Found 8-bit register for signal <Data<228>>.
+    Found 8-bit register for signal <Data<229>>.
+    Found 8-bit register for signal <Data<230>>.
+    Found 8-bit register for signal <Data<231>>.
+    Found 8-bit register for signal <Data<232>>.
+    Found 8-bit register for signal <Data<233>>.
+    Found 8-bit register for signal <Data<234>>.
+    Found 8-bit register for signal <Data<235>>.
+    Found 8-bit register for signal <Data<236>>.
+    Found 8-bit register for signal <Data<237>>.
+    Found 8-bit register for signal <Data<238>>.
+    Found 8-bit register for signal <Data<239>>.
+    Found 8-bit register for signal <Data<240>>.
+    Found 8-bit register for signal <Data<241>>.
+    Found 8-bit register for signal <Data<242>>.
+    Found 8-bit register for signal <Data<243>>.
+    Found 8-bit register for signal <Data<244>>.
+    Found 8-bit register for signal <Data<245>>.
+    Found 8-bit register for signal <Data<246>>.
+    Found 8-bit register for signal <Data<247>>.
+    Found 8-bit register for signal <Data<248>>.
+    Found 8-bit register for signal <Data<249>>.
+    Found 8-bit register for signal <Data<250>>.
+    Found 8-bit register for signal <Data<251>>.
+    Found 8-bit register for signal <Data<252>>.
+    Found 8-bit register for signal <Data<253>>.
+    Found 8-bit register for signal <Data<254>>.
+    Found 8-bit register for signal <Data<255>>.
+    Found 8-bit register for signal <OUTPUT>.
+    Found 8-bit register for signal <Data<0>>.
+INFO:Xst:3019 - HDL ADVISOR - 2048 flip-flops were inferred for signal <Data>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Found 8-bit 256-to-1 multiplexer for signal <Addr[7]_Data[255][7]_wide_mux_257_OUT> created at line 57.
+    Summary:
+	inferred 2056 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <BancMemoData> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 257
+ 8-bit register                                        : 257
+# Multiplexers                                         : 1
+ 8-bit 256-to-1 multiplexer                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 2056
+ Flip-Flops                                            : 2056
+# Multiplexers                                         : 1
+ 8-bit 256-to-1 multiplexer                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <BancMemoData> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block BancMemoData, actual ratio is 38.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 2056
+ Flip-Flops                                            : 2056
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : BancMemoData.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1229
+#      INV                         : 1
+#      LUT2                        : 1
+#      LUT3                        : 19
+#      LUT5                        : 256
+#      LUT6                        : 544
+#      MUXF7                       : 272
+#      MUXF8                       : 136
+# FlipFlops/Latches                : 2056
+#      FDE                         : 8
+#      FDRE                        : 2048
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 26
+#      IBUF                        : 18
+#      OBUF                        : 8
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            2056  out of  18224    11%  
+ Number of Slice LUTs:                  821  out of   9112     9%  
+    Number used as Logic:               821  out of   9112     9%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   2211
+   Number with an unused Flip Flop:     155  out of   2211     7%  
+   Number with an unused LUT:          1390  out of   2211    62%  
+   Number of fully used LUT-FF pairs:   666  out of   2211    30%  
+   Number of unique control sets:       257
+
+IO Utilization: 
+ Number of IOs:                          27
+ Number of bonded IOBs:                  27  out of    232    11%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 2056  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 3.193ns (Maximum Frequency: 313.215MHz)
+   Minimum input arrival time before clock: 6.688ns
+   Maximum output required time after clock: 3.597ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 3.193ns (frequency: 313.215MHz)
+  Total number of paths / destination ports: 2048 / 8
+-------------------------------------------------------------------------
+Delay:               3.193ns (Levels of Logic = 6)
+  Source:            Data_238_0 (FF)
+  Destination:       OUTPUT_0 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: Data_238_0 to OUTPUT_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             1   0.447   0.827  Data_238_0 (Data_238_0)
+     LUT6:I2->O            1   0.203   0.000  Mmux_Addr[7]_Data[255][7]_wide_mux_257_OUT_113 (Mmux_Addr[7]_Data[255][7]_wide_mux_257_OUT_113)
+     MUXF7:I1->O           1   0.140   0.000  Mmux_Addr[7]_Data[255][7]_wide_mux_257_OUT_10_f7_1 (Mmux_Addr[7]_Data[255][7]_wide_mux_257_OUT_10_f72)
+     MUXF8:I1->O           1   0.152   0.827  Mmux_Addr[7]_Data[255][7]_wide_mux_257_OUT_9_f8_0 (Mmux_Addr[7]_Data[255][7]_wide_mux_257_OUT_9_f81)
+     LUT6:I2->O            1   0.203   0.000  Mmux_Addr[7]_Data[255][7]_wide_mux_257_OUT_4 (Mmux_Addr[7]_Data[255][7]_wide_mux_257_OUT_4)
+     MUXF7:I1->O           1   0.140   0.000  Mmux_Addr[7]_Data[255][7]_wide_mux_257_OUT_3_f7 (Mmux_Addr[7]_Data[255][7]_wide_mux_257_OUT_3_f7)
+     MUXF8:I1->O           1   0.152   0.000  Mmux_Addr[7]_Data[255][7]_wide_mux_257_OUT_2_f8 (Addr[7]_Data[255][7]_wide_mux_257_OUT<0>)
+     FDE:D                     0.102          OUTPUT_0
+    ----------------------------------------
+    Total                      3.193ns (1.539ns logic, 1.654ns route)
+                                       (48.2% logic, 51.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 24040 / 6160
+-------------------------------------------------------------------------
+Offset:              6.688ns (Levels of Logic = 3)
+  Source:            Addr<2> (PAD)
+  Destination:       Data_9_0 (FF)
+  Destination Clock: CLK rising
+
+  Data Path: Addr<2> to Data_9_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           288   1.222   2.298  Addr_2_IBUF (Addr_2_IBUF)
+     LUT3:I0->O           32   0.205   1.636  _n2175_inv11 (_n2175_inv1)
+     LUT5:I0->O            8   0.203   0.802  _n3079_inv1 (_n3079_inv)
+     FDRE:CE                   0.322          Data_254_0
+    ----------------------------------------
+    Total                      6.688ns (1.952ns logic, 4.736ns route)
+                                       (29.2% logic, 70.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              3.597ns (Levels of Logic = 1)
+  Source:            OUTPUT_7 (FF)
+  Destination:       OUTPUT<7> (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: OUTPUT_7 to OUTPUT<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.447   0.579  OUTPUT_7 (OUTPUT_7)
+     OBUF:I->O                 2.571          OUTPUT_7_OBUF (OUTPUT<7>)
+    ----------------------------------------
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |    3.193|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.95 secs
+ 
+--> 
+
+
+Total memory usage is 404032 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

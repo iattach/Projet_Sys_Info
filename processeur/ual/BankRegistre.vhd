@@ -44,7 +44,7 @@ end BancRegistre;
 
 architecture Behavioral of BancRegistre is
 
-type table is array (0 to 15) of STD_LOGIC_VECTOR(7 downto 0);
+type table is array (0 to 255) of STD_LOGIC_VECTOR(7 downto 0);
 signal BR: table ;
 
 begin

@@ -1,0 +1,29 @@
+Command line:
+   Test_BancMemoData_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  59603
+
+Tue May  4 12:09:12 2021
+
+
+ Elaboration Time: 0 sec
+
+ Current Memory Usage: 181.686 Meg
+
+ Total Signals          : 13
+ Total Nets             : 155
+ Total Signal Drivers   : 7
+ Total Blocks           : 6
+ Total Primitive Blocks : 5
+ Total Processes        : 3
+ Total Traceable Variables  : 16
+ Total Scalar Nets and Variables : 657
+Total Line Count : 25
+
+ Total Simulation Time: 0.12 sec
+
+ Current Memory Usage: 257.188 Meg
+
+Tue May  4 12:11:32 2021
+

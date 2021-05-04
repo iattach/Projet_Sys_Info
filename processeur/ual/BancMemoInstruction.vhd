@@ -22,7 +22,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -37,8 +37,15 @@ end BancMemoInstruction;
 
 architecture Behavioral of BancMemoInstruction is
 
+type table is array (0 to 15) of STD_LOGIC_VECTOR(31 downto 0);
+signal instruction: table ;
+
 begin
 
-
+process
+	begin
+		wait until CLK'event and CLK='1';
+			OUTPUT<= instruction(to_integer(unsigned(Addr)));
+	end process;
 end Behavioral;
 

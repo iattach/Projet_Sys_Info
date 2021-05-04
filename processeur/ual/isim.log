@@ -1,5 +1,5 @@
 ISim log file
-Running: /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/Test_BancRegistre_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/Test_BancRegistre_isim_beh.wdb 
+Running: /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/Test_BancMemoData_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/Test_BancMemoData_isim_beh.wdb 
 ISim O.87xd (signature 0x8ddf5b5d)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.

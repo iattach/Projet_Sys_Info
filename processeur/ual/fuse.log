@@ -1,24 +1,25 @@
-Running: /usr/local/insa/Xilinx.ISE/13.4/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/Test_BancRegistre_isim_beh.exe -prj /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/Test_BancRegistre_beh.prj work.Test_BancRegistre 
+Running: /usr/local/insa/Xilinx.ISE/13.4/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/Test_BancMemoData_isim_beh.exe -prj /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/Test_BancMemoData_beh.prj work.Test_BancMemoData 
 ISim O.87xd (signature 0x8ddf5b5d)
 Number of CPUs detected in this system: 12
 Turning on mult-threading, number of parallel sub-compilation jobs: 24 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/BankRegistre.vhd" into library work
-Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/Test_BancRegistre.vhd" into library work
+Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/BancMemoData.vhd" into library work
+Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/Test_BancMemoData.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 96772 KB
-Fuse CPU Usage: 760 ms
+Fuse Memory Usage: 98500 KB
+Fuse CPU Usage: 810 ms
 Compiling package standard
 Compiling package std_logic_1164
+Compiling package numeric_std
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
-Compiling architecture behavioral of entity BancRegistre [bancregistre_default]
-Compiling architecture behavior of entity test_bancregistre
+Compiling architecture behavioral of entity BancMemoData [bancmemodata_default]
+Compiling architecture behavior of entity test_bancmemodata
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 7 VHDL Units
-Built simulation executable /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/Test_BancRegistre_isim_beh.exe
-Fuse Memory Usage: 1717688 KB
-Fuse CPU Usage: 840 ms
-GCC CPU Usage: 190 ms
+Compiled 8 VHDL Units
+Built simulation executable /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/Test_BancMemoData_isim_beh.exe
+Fuse Memory Usage: 1722940 KB
+Fuse CPU Usage: 980 ms
+GCC CPU Usage: 1670 ms

@@ -1,0 +1,256 @@
+--------------------------------------------------------------------------------
+Release 13.4 Trace  (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+/usr/local/insa/Xilinx.ISE/13.4/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle
+ise -v 3 -s 3 -n 3 -fastpaths -xml BancRegistre.twx BancRegistre.ncd -o
+BancRegistre.twr BancRegistre.pcf
+
+Design file:              BancRegistre.ncd
+Physical constraint file: BancRegistre.pcf
+Device,package,speed:     xc6slx16,csg324,C,-3 (PRODUCTION 1.21 2012-01-07)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock CLK
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+AddrW<0>    |    2.410(R)|      SLOW  |   -0.131(R)|      SLOW  |CLK_BUFGP         |   0.000|
+AddrW<1>    |    2.712(R)|      SLOW  |   -0.218(R)|      SLOW  |CLK_BUFGP         |   0.000|
+AddrW<2>    |    2.493(R)|      SLOW  |    0.021(R)|      SLOW  |CLK_BUFGP         |   0.000|
+AddrW<3>    |    2.711(R)|      SLOW  |   -0.485(R)|      SLOW  |CLK_BUFGP         |   0.000|
+DATA<0>     |    1.320(R)|      SLOW  |    0.259(R)|      SLOW  |CLK_BUFGP         |   0.000|
+DATA<1>     |    1.403(R)|      SLOW  |   -0.260(R)|      SLOW  |CLK_BUFGP         |   0.000|
+DATA<2>     |    1.167(R)|      FAST  |   -0.136(R)|      SLOW  |CLK_BUFGP         |   0.000|
+DATA<3>     |    1.231(R)|      SLOW  |   -0.027(R)|      SLOW  |CLK_BUFGP         |   0.000|
+DATA<4>     |    1.228(R)|      FAST  |    0.282(R)|      SLOW  |CLK_BUFGP         |   0.000|
+DATA<5>     |    1.946(R)|      SLOW  |   -0.269(R)|      SLOW  |CLK_BUFGP         |   0.000|
+DATA<6>     |    1.636(R)|      SLOW  |   -0.099(R)|      SLOW  |CLK_BUFGP         |   0.000|
+DATA<7>     |    1.698(R)|      SLOW  |   -0.093(R)|      SLOW  |CLK_BUFGP         |   0.000|
+RST         |    2.526(R)|      SLOW  |    0.214(R)|      SLOW  |CLK_BUFGP         |   0.000|
+W           |    2.561(R)|      SLOW  |   -0.250(R)|      SLOW  |CLK_BUFGP         |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock CLK to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+QA<0>       |         9.335(R)|      SLOW  |         4.295(R)|      FAST  |CLK_BUFGP         |   0.000|
+QA<1>       |         9.746(R)|      SLOW  |         4.653(R)|      FAST  |CLK_BUFGP         |   0.000|
+QA<2>       |         9.358(R)|      SLOW  |         4.494(R)|      FAST  |CLK_BUFGP         |   0.000|
+QA<3>       |         9.605(R)|      SLOW  |         4.441(R)|      FAST  |CLK_BUFGP         |   0.000|
+QA<4>       |        10.048(R)|      SLOW  |         4.670(R)|      FAST  |CLK_BUFGP         |   0.000|
+QA<5>       |         9.453(R)|      SLOW  |         4.364(R)|      FAST  |CLK_BUFGP         |   0.000|
+QA<6>       |         9.122(R)|      SLOW  |         4.439(R)|      FAST  |CLK_BUFGP         |   0.000|
+QA<7>       |         9.760(R)|      SLOW  |         4.677(R)|      FAST  |CLK_BUFGP         |   0.000|
+QB<0>       |         9.733(R)|      SLOW  |         4.472(R)|      FAST  |CLK_BUFGP         |   0.000|
+QB<1>       |         9.116(R)|      SLOW  |         4.258(R)|      FAST  |CLK_BUFGP         |   0.000|
+QB<2>       |         9.547(R)|      SLOW  |         4.571(R)|      FAST  |CLK_BUFGP         |   0.000|
+QB<3>       |         9.311(R)|      SLOW  |         4.463(R)|      FAST  |CLK_BUFGP         |   0.000|
+QB<4>       |         9.825(R)|      SLOW  |         4.653(R)|      FAST  |CLK_BUFGP         |   0.000|
+QB<5>       |         9.906(R)|      SLOW  |         4.724(R)|      FAST  |CLK_BUFGP         |   0.000|
+QB<6>       |         9.088(R)|      SLOW  |         4.405(R)|      FAST  |CLK_BUFGP         |   0.000|
+QB<7>       |         9.670(R)|      SLOW  |         4.576(R)|      FAST  |CLK_BUFGP         |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+AddrA<0>       |QA<0>          |    9.885|
+AddrA<0>       |QA<1>          |    9.668|
+AddrA<0>       |QA<2>          |    9.728|
+AddrA<0>       |QA<3>          |    9.709|
+AddrA<0>       |QA<4>          |    9.993|
+AddrA<0>       |QA<5>          |    9.118|
+AddrA<0>       |QA<6>          |    9.053|
+AddrA<0>       |QA<7>          |    9.731|
+AddrA<1>       |QA<0>          |    9.654|
+AddrA<1>       |QA<1>          |    9.437|
+AddrA<1>       |QA<2>          |    9.497|
+AddrA<1>       |QA<3>          |    9.478|
+AddrA<1>       |QA<4>          |    9.599|
+AddrA<1>       |QA<5>          |    9.347|
+AddrA<1>       |QA<6>          |    9.329|
+AddrA<1>       |QA<7>          |    9.779|
+AddrA<2>       |QA<0>          |    8.682|
+AddrA<2>       |QA<1>          |    8.465|
+AddrA<2>       |QA<2>          |    8.525|
+AddrA<2>       |QA<3>          |    8.506|
+AddrA<2>       |QA<4>          |    9.533|
+AddrA<2>       |QA<5>          |    8.588|
+AddrA<2>       |QA<6>          |    8.297|
+AddrA<2>       |QA<7>          |    9.066|
+AddrA<3>       |QA<0>          |    9.440|
+AddrA<3>       |QA<1>          |    9.223|
+AddrA<3>       |QA<2>          |    9.283|
+AddrA<3>       |QA<3>          |    9.264|
+AddrA<3>       |QA<4>          |    9.037|
+AddrA<3>       |QA<5>          |    8.716|
+AddrA<3>       |QA<6>          |    8.608|
+AddrA<3>       |QA<7>          |    8.978|
+AddrB<0>       |QB<0>          |    8.755|
+AddrB<0>       |QB<1>          |    8.983|
+AddrB<0>       |QB<2>          |    9.081|
+AddrB<0>       |QB<3>          |    8.842|
+AddrB<0>       |QB<4>          |    9.036|
+AddrB<0>       |QB<5>          |    8.507|
+AddrB<0>       |QB<6>          |    8.684|
+AddrB<0>       |QB<7>          |    8.941|
+AddrB<1>       |QB<0>          |    9.052|
+AddrB<1>       |QB<1>          |    8.802|
+AddrB<1>       |QB<2>          |    9.443|
+AddrB<1>       |QB<3>          |    9.046|
+AddrB<1>       |QB<4>          |    8.905|
+AddrB<1>       |QB<5>          |    9.178|
+AddrB<1>       |QB<6>          |    8.641|
+AddrB<1>       |QB<7>          |    9.322|
+AddrB<2>       |QB<0>          |    8.747|
+AddrB<2>       |QB<1>          |    8.894|
+AddrB<2>       |QB<2>          |    9.241|
+AddrB<2>       |QB<3>          |    8.676|
+AddrB<2>       |QB<4>          |    8.798|
+AddrB<2>       |QB<5>          |    8.612|
+AddrB<2>       |QB<6>          |    8.422|
+AddrB<2>       |QB<7>          |    8.722|
+AddrB<3>       |QB<0>          |    8.520|
+AddrB<3>       |QB<1>          |    8.078|
+AddrB<3>       |QB<2>          |    8.425|
+AddrB<3>       |QB<3>          |    8.020|
+AddrB<3>       |QB<4>          |    8.806|
+AddrB<3>       |QB<5>          |    8.631|
+AddrB<3>       |QB<6>          |    8.208|
+AddrB<3>       |QB<7>          |    8.687|
+AddrW<0>       |QA<0>          |    9.301|
+AddrW<0>       |QA<1>          |    9.084|
+AddrW<0>       |QA<2>          |    9.144|
+AddrW<0>       |QA<3>          |    9.125|
+AddrW<0>       |QA<4>          |    8.758|
+AddrW<0>       |QA<5>          |    8.534|
+AddrW<0>       |QA<6>          |    8.469|
+AddrW<0>       |QA<7>          |    8.560|
+AddrW<0>       |QB<0>          |    8.559|
+AddrW<0>       |QB<1>          |    8.054|
+AddrW<0>       |QB<2>          |    8.435|
+AddrW<0>       |QB<3>          |    8.015|
+AddrW<0>       |QB<4>          |    8.140|
+AddrW<0>       |QB<5>          |    7.892|
+AddrW<0>       |QB<6>          |    7.973|
+AddrW<0>       |QB<7>          |    7.887|
+AddrW<1>       |QA<0>          |    9.282|
+AddrW<1>       |QA<1>          |    9.065|
+AddrW<1>       |QA<2>          |    9.125|
+AddrW<1>       |QA<3>          |    9.106|
+AddrW<1>       |QA<4>          |    8.739|
+AddrW<1>       |QA<5>          |    8.515|
+AddrW<1>       |QA<6>          |    8.450|
+AddrW<1>       |QA<7>          |    8.541|
+AddrW<1>       |QB<0>          |    8.595|
+AddrW<1>       |QB<1>          |    8.090|
+AddrW<1>       |QB<2>          |    8.471|
+AddrW<1>       |QB<3>          |    8.051|
+AddrW<1>       |QB<4>          |    8.176|
+AddrW<1>       |QB<5>          |    7.928|
+AddrW<1>       |QB<6>          |    8.009|
+AddrW<1>       |QB<7>          |    7.923|
+AddrW<2>       |QA<0>          |    8.554|
+AddrW<2>       |QA<1>          |    8.337|
+AddrW<2>       |QA<2>          |    8.397|
+AddrW<2>       |QA<3>          |    8.378|
+AddrW<2>       |QA<4>          |    8.011|
+AddrW<2>       |QA<5>          |    7.787|
+AddrW<2>       |QA<6>          |    7.722|
+AddrW<2>       |QA<7>          |    7.813|
+AddrW<2>       |QB<0>          |    7.466|
+AddrW<2>       |QB<1>          |    6.961|
+AddrW<2>       |QB<2>          |    7.342|
+AddrW<2>       |QB<3>          |    6.922|
+AddrW<2>       |QB<4>          |    7.047|
+AddrW<2>       |QB<5>          |    6.799|
+AddrW<2>       |QB<6>          |    6.880|
+AddrW<2>       |QB<7>          |    6.794|
+AddrW<3>       |QA<0>          |    8.652|
+AddrW<3>       |QA<1>          |    8.435|
+AddrW<3>       |QA<2>          |    8.495|
+AddrW<3>       |QA<3>          |    8.476|
+AddrW<3>       |QA<4>          |    8.109|
+AddrW<3>       |QA<5>          |    7.885|
+AddrW<3>       |QA<6>          |    7.820|
+AddrW<3>       |QA<7>          |    7.911|
+AddrW<3>       |QB<0>          |    7.558|
+AddrW<3>       |QB<1>          |    7.053|
+AddrW<3>       |QB<2>          |    7.434|
+AddrW<3>       |QB<3>          |    7.014|
+AddrW<3>       |QB<4>          |    7.139|
+AddrW<3>       |QB<5>          |    6.891|
+AddrW<3>       |QB<6>          |    6.972|
+AddrW<3>       |QB<7>          |    6.886|
+DATA<0>        |QA<0>          |    6.946|
+DATA<0>        |QB<0>          |    6.921|
+DATA<1>        |QA<1>          |    6.879|
+DATA<1>        |QB<1>          |    6.942|
+DATA<2>        |QA<2>          |    6.890|
+DATA<2>        |QB<2>          |    6.946|
+DATA<3>        |QA<3>          |    6.749|
+DATA<3>        |QB<3>          |    6.555|
+DATA<4>        |QA<4>          |    6.885|
+DATA<4>        |QB<4>          |    6.749|
+DATA<5>        |QA<5>          |    6.982|
+DATA<5>        |QB<5>          |    6.925|
+DATA<6>        |QA<6>          |    6.376|
+DATA<6>        |QB<6>          |    6.866|
+DATA<7>        |QA<7>          |    6.540|
+DATA<7>        |QB<7>          |    6.702|
+W              |QA<0>          |    7.763|
+W              |QA<1>          |    7.546|
+W              |QA<2>          |    7.606|
+W              |QA<3>          |    7.587|
+W              |QA<4>          |    7.220|
+W              |QA<5>          |    6.996|
+W              |QA<6>          |    6.931|
+W              |QA<7>          |    7.022|
+W              |QB<0>          |    7.416|
+W              |QB<1>          |    6.911|
+W              |QB<2>          |    7.292|
+W              |QB<3>          |    6.872|
+W              |QB<4>          |    6.997|
+W              |QB<5>          |    6.749|
+W              |QB<6>          |    6.830|
+W              |QB<7>          |    6.744|
+---------------+---------------+---------+
+
+
+Analysis completed Tue May  4 12:06:01 2021 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 390 MB
+
+
+
