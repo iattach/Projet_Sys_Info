@@ -52,7 +52,7 @@ ALPHANUM    {ALPHABET}({ALPHABET}|{NUMBER}|"_")*
              return (tNUMBER);}
 {REAL}      {yylval.reel=atof(yytext);
              return (tREAL);} 
-{ALPHANUM}  {strcpy(yylval.str,yytext);
+{ALPHANUM}  {yylval.str = strdup(yytext);
              return (tVAR);}
 
 

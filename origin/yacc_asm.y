@@ -84,7 +84,47 @@
         add_to_output("%s %d %d %d",operator,adr_first,adr_first,adr_second);
         pop_symbol();
     }
-
+    void add_to_instruction(char *instruction, int line) {
+        char buffer[32];
+        sprintf(buffer, "%d", line);
+        strcpy(instruction, strcat(instruction, buffer));
+    }
+    void add_condition(char * operation_code) {
+      int adr_first_operand = get_last_index()-1;
+      int adr_second_operand = get_last_index();
+      int new_adr;
+      if(strcmp(operation_code,"==")==0) {
+        add_to_output("EQU %d %d %d",adr_first_operand,adr_first_operand,adr_second_operand);
+      }
+      else if(strcmp(operation_code,"!=")==0) {
+        new_adr = push_symbol("$", current_depth, 0, 0, current_func);
+        add_to_output("INF %d %d %d",new_adr,adr_first_operand,adr_second_operand);
+        add_to_output("SUP %d %d %d",adr_first_operand,adr_first_operand,adr_second_operand);
+        add_to_output("ADD %d %d %d",adr_first_operand,adr_first_operand,new_adr);
+        pop_symbol();
+      }
+      else if(strcmp(operation_code,"<")==0) {
+        add_to_output("INF %d %d %d",adr_first_operand,adr_first_operand,adr_second_operand);
+      }
+      else if(strcmp(operation_code,"<=")==0) {
+        new_adr = push_symbol("$", current_depth, 0, 0, current_func);
+        add_to_output("INF %d %d %d",new_adr,adr_first_operand,adr_second_operand);
+        add_to_output("EQU %d %d %d",adr_first_operand,adr_first_operand,adr_second_operand);
+        add_to_output("ADD %d %d %d",adr_first_operand,adr_first_operand,new_adr);
+        pop_symbol();
+      }
+      else if(strcmp(operation_code,">")==0) {
+        add_to_output("SUP %d %d %d",adr_first_operand,adr_first_operand,adr_second_operand);
+      }
+      else if(strcmp(operation_code,">=")==0) {
+        new_adr = push_symbol("$", current_depth, 0, 0, current_func);
+        add_to_output("SUP %d %d %d",new_adr,adr_first_operand,adr_second_operand);
+        add_to_output("EQU %d %d %d",adr_first_operand,adr_first_operand,adr_second_operand);
+        add_to_output("ADD %d %d %d",adr_first_operand,adr_first_operand,new_adr);
+        pop_symbol();
+      }
+      pop_symbol();
+  }
     //------------------------------------------------------------------------
 
 %}
@@ -95,6 +135,7 @@
     float reel;
 }
 
+%type<number> Test
 %token<number>  tNUMBER 
 %token<reel> tREAL
 %token<str> tVAR
@@ -109,15 +150,13 @@
 %left tSEP 
 %right tEQUAL tADD tSUB tMUL tDIV 
 %left tCMP 
-%left tINF tSUP tINFEQUAL tSUPEQUAL
+%left tINF tSUP tINFEQUAL tSUPEQUAL tNOTEQUAL
 
 
 %start S 
 %%
 
-S:          FunctionMain {
-                printf("test");
-            }
+S:          FunctionMain 
             ;
 FunctionMain: tMain  tOB tCB  Body
             |
@@ -139,22 +178,23 @@ Declaration:tINT tVAR
                 update_last_var($2);
                 int adr = push_symbol($2, current_depth, 0, 0, current_func);
                 printf("push symbol: %s\n",$2);
-            }Aff_after_declaration Multi_Declaration
+            }Aff_after_declaration Multi_Declaration 
             |
             ;
 
 Aff_after_declaration:
             tEQUAL E 
             { 
-                //add_affectation(last_var_read); 
-                //pop_symbol(); 
+                add_affectation(last_var_read); 
+                pop_symbol(); 
             } 
             |
             ;
 
 Multi_Declaration:  tSEP tVAR{
-               // update_last_var($2);
-               // int adr = push_symbol($2, current_depth, 0, 0, current_func);
+                update_last_var($2);
+                printf("push symbol: %s\n",$2);
+                int adr = push_symbol($2, current_depth, 0, 0, current_func);
             } 
             Aff_after_declaration Multi_Declaration 
             | tSEMCOL
@@ -165,6 +205,7 @@ Aff:        tVAR tEQUAL E tSEMCOL{
                 if(constant == 1){
                     yyerror("Error syntaxique : Modification of a constant is not allowed\n");
                 }else{
+                    printf("test aff %s\n",$1);
                     add_affectation($1);
                     pop_symbol();
                 }
@@ -173,14 +214,14 @@ Aff:        tVAR tEQUAL E tSEMCOL{
 
 E:          tNUMBER{
                 int new_adr = push_symbol("$", current_depth, 0, 0, current_func);
+                printf("test : AFC %d %d\n", new_adr, $1);
                 add_to_output("AFC %d %d", new_adr, $1);
             }  
             |tVAR {
+                printf("var : %s\n",$1);
                 int current_adr = find_symbol($1, current_depth, current_func);
                 int new_adr = push_symbol("$",current_depth, 0, 0, current_func);
-                if(!is_initialized($1, current_depth, current_func)) {
-                    yyerror("Error syntaxique : Variable not initialized");
-                }
+                
 
                 add_to_output("COP %d %d", new_adr, current_adr);
             }
@@ -188,30 +229,73 @@ E:          tNUMBER{
             |Exp
             ;
 
-Exp:        E tADD E { add_operation("ADD"); }
+Exp:        E tADD E {
+                    add_operation("ADD"); }
             |E tSUB E  { add_operation("SOU"); }
             |E tMUL E  { add_operation("MUL"); } 
             |E tDIV E  { add_operation("DIV"); }
+            |E tCMP E {add_condition("==");}
+            |E tINF E {add_condition("<");}
+            |E tSUP E {add_condition(">");}
+            |E tINFEQUAL E {add_condition("<=");}
+            |E tSUPEQUAL E {add_condition(">=");}
+            |E tNOTEQUAL E {add_condition("!=");}
             ;   
 
-Print:      tPRINTF tOB tVAR tCB tSEMCOL 
+Print:      tPRINTF tOB tVAR tCB tSEMCOL {
+                int adr = find_symbol($3,current_depth,current_func);
+                add_to_output("PRI %d",adr);
+            }
             ;
 
 IfStatement:
-            tIF tOB {printf("tIF ( ");} Exp {printf("Exp ");} tCB {printf(") ");} 
-                Body
-            ElseStatement
+            tIF tOB Exp {
+                int adr_res_condition = get_last_index();
+                add_to_output("JMF %d ",adr_res_condition);
+                pop_symbol();
+            }tCB Test tOA  {
+                current_depth ++ ;
+            }
+            Declaration Contenus {
+                add_to_output("JMP ");
+                add_to_instruction(output.instructions[$6], output.last_line);
+            }
+            tCA { 
+                    clear_symbols_by_depth(current_depth); 
+                    current_depth--; 
+            } Test
+            ElseStatement {
+                add_to_instruction(output.instructions[$14], output.last_line);
+            }
+            ;
+Test:       {
+                $$ = output.last_line - 1 ;
+            }
             ;
 
 ElseStatement:
-            tELSE {printf("tELSE ");} 
-                Body
+            tELSE 
+            tOA  {current_depth ++ ;}
+                Declaration Contenus {
+                    clear_symbols_by_depth(current_depth); 
+                    current_depth--; 
+                }
+            tCA
             |
             ;
 
 WhileLoop:
-            tWHILE {printf("tWHILE ");} tOB {printf(" ( ");} Exp {printf("Exp ");} tCB {printf(" ) ");} 
-                Body
+            tWHILE Test tOB Exp tCB  {
+                    int adr_condition_result = get_last_index();
+                    add_to_output("JMF %d ", adr_condition_result);
+                    pop_symbol();
+            }
+            Test tOA  { current_depth++; } Declaration Contenus {
+                add_to_instruction(output.instructions[$7], output.last_line+1);
+                add_to_output("JMP %d", $2+1);
+            }
+            tCA { clear_symbols_by_depth(current_depth); current_depth--; }
+
             ;
       
 
