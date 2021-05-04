@@ -4,37 +4,37 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="2">
-<DesignStatistics TimeStamp="Thu Apr 15 12:01:12 2021"><group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="2">
+<DeviceUsageSummary rev="4">
+<DesignStatistics TimeStamp="Tue May  4 11:03:53 2021"><group name="MiscellaneousStatistics">
+<item name="AGG_BONDED_IO" rev="4">
 <attrib name="value" value="31"/></item>
-<item name="AGG_IO" rev="2">
+<item name="AGG_IO" rev="4">
 <attrib name="value" value="31"/></item>
-<item name="AGG_SLICE" rev="2">
+<item name="AGG_SLICE" rev="4">
 <attrib name="value" value="11"/></item>
-<item name="NUM_BONDED_IOB" rev="2">
+<item name="NUM_BONDED_IOB" rev="4">
 <attrib name="value" value="31"/></item>
-<item name="NUM_BSFULL" rev="2">
+<item name="NUM_BSFULL" rev="4">
 <attrib name="value" value="1"/></item>
-<item name="NUM_BSLUTONLY" rev="2">
+<item name="NUM_BSLUTONLY" rev="4">
 <attrib name="value" value="27"/></item>
-<item name="NUM_BSUSED" rev="2">
+<item name="NUM_BSUSED" rev="4">
 <attrib name="value" value="28"/></item>
-<item name="NUM_DSP48A1" rev="2">
+<item name="NUM_DSP48A1" rev="4">
 <attrib name="value" value="1"/></item>
-<item name="NUM_LOGIC_O6ONLY" rev="2">
+<item name="NUM_LOGIC_O6ONLY" rev="4">
 <attrib name="value" value="28"/></item>
-<item name="NUM_SLICEL" rev="2">
+<item name="NUM_SLICEL" rev="4">
 <attrib name="value" value="4"/></item>
-<item name="NUM_SLICEX" rev="2">
+<item name="NUM_SLICEX" rev="4">
 <attrib name="value" value="7"/></item>
-<item name="NUM_SLICE_CARRY4" rev="2">
+<item name="NUM_SLICE_CARRY4" rev="4">
 <attrib name="value" value="4"/></item>
-<item name="NUM_SLICE_CYINIT" rev="2">
+<item name="NUM_SLICE_CYINIT" rev="4">
 <attrib name="value" value="30"/></item>
-<item name="NUM_SLICE_LATCHLOGIC" rev="2">
+<item name="NUM_SLICE_LATCHLOGIC" rev="4">
 <attrib name="value" value="1"/></item>
-<item name="NUM_SLICE_UNUSEDCTRL" rev="2">
+<item name="NUM_SLICE_UNUSEDCTRL" rev="4">
 <attrib name="value" value="10"/></item>
 </group>
 </DesignStatistics>

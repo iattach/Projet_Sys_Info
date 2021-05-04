@@ -1,0 +1,2 @@
+vhdl isim_temp "BankRegistre.vhd"
+vhdl isim_temp "Test_BancRegistre.vhd"
