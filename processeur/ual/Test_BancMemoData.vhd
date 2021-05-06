@@ -95,7 +95,7 @@ BEGIN
       wait for CLK_period*10;
 
       -- insert stimulus here 
-				RST <= '1';
+		RST <= '1';
 
 		addr <= x"01";
 		INPUT <= x"0A";

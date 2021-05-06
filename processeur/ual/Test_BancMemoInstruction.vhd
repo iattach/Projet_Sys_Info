@@ -27,10 +27,10 @@
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
- 
+Use IEEE.std_logic_unsigned.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
+USE ieee.numeric_std.ALL;
  
 ENTITY Test_BancMemoInstruction IS
 END Test_BancMemoInstruction;
@@ -51,6 +51,7 @@ ARCHITECTURE behavior OF Test_BancMemoInstruction IS
    --Inputs
    signal Addr : std_logic_vector(7 downto 0) := (others => '0');
    signal CLK : std_logic := '0';
+   signal RST : std_logic := '0';
 
  	--Outputs
    signal OUTPUT : std_logic_vector(31 downto 0);
@@ -74,20 +75,30 @@ BEGIN
 		wait for CLK_period/2;
 		CLK <= '1';
 		wait for CLK_period/2;
+		if RST = '0' then
+			ADDR <= x"00";
+		else
+			ADDR<= ADDR + 1;
+		end if;
    end process;
  
 
-   -- Stimulus process
+-- Stimulus process
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
-      wait for 100 ns;	
+      wait for 50 ns;	
+		RST<='0';
 
-      wait for CLK_period*10;
+      wait for CLK_period*2;
+		RST<='1';
 
       -- insert stimulus here 
-
+--		wait for CLK_period*3;
+--		
+--		wait for CLK_period*3;
+--		for i in 0 to 15 loop
+--			ADDR<= ADDR + x"1";
+--		end loop;
       wait;
-   end process;
-
-END;
+   end process;END;

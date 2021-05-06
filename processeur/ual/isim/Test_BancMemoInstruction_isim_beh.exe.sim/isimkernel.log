@@ -1,0 +1,24 @@
+Command line:
+   Test_BancMemoInstruction_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  35863
+
+Thu May  6 10:16:08 2021
+
+
+ Elaboration Time: 0 sec
+
+ Current Memory Usage: 181.953 Meg
+
+ Total Signals          : 8
+ Total Nets             : 554
+ Total Signal Drivers   : 5
+ Total Blocks           : 6
+ Total Primitive Blocks : 5
+ Total Processes        : 4
+ Total Traceable Variables  : 16
+ Total Scalar Nets and Variables : 1056
+Total Line Count : 15
+In process BancMemoInstruction.vhd:45 
+ 

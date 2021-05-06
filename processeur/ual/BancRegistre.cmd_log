@@ -9,3 +9,8 @@ ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 BancRegist
 map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o BancRegistre_map.ncd BancRegistre.ngd BancRegistre.pcf 
 par -w -intstyle ise -ol high -mt off BancRegistre_map.ncd BancRegistre.ncd BancRegistre.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml BancRegistre.twx BancRegistre.ncd -o BancRegistre.twr BancRegistre.pcf 
+xst -intstyle ise -ifn "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/BancRegistre.xst" -ofn "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/BancRegistre.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 BancRegistre.ngc BancRegistre.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o BancRegistre_map.ncd BancRegistre.ngd BancRegistre.pcf 
+par -w -intstyle ise -ol high -mt off BancRegistre_map.ncd BancRegistre.ncd BancRegistre.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml BancRegistre.twx BancRegistre.ncd -o BancRegistre.twr BancRegistre.pcf 

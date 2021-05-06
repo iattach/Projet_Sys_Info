@@ -53,12 +53,12 @@ begin
 			else 
 				if (RW ='1') then  --write
 					Data(to_integer(unsigned(Addr)))<= INPUT;
-				else --read
-					OUTPUT <= Data(to_integer(unsigned(Addr)));
+				--else --read
+					--OUTPUT <= Data(to_integer(unsigned(Addr)));
 				end if;
 			end if;
 	end process;
-
+	OUTPUT <= Data(to_integer(unsigned(Addr)));
 
 end Behavioral;
 
