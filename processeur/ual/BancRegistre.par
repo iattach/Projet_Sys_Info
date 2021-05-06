@@ -1,7 +1,7 @@
 Release 13.4 par O.87xd (lin64)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-insa-11282::  Thu May 06 09:36:29 2021
+insa-11282::  Thu May 06 11:51:31 2021
 
 par -w -intstyle ise -ol high -mt off BancRegistre_map.ncd BancRegistre.ncd
 BancRegistre.pcf 
