@@ -41,7 +41,15 @@ type table is array (0 to 15) of STD_LOGIC_VECTOR(31 downto 0);
 signal instruction: table ;
 
 begin
-   instruction <= (0 => x"00000000", 1 => x"05060104", others => x"00000000");
+   instruction <= (0 => x"01020304", 
+						 1 => x"02020304",
+						 2 => x"03020304",
+						 3 => x"04020304",
+						 4 => x"05020304",
+						 5 => x"06020304",
+						 6 => x"07020304",
+						 7 => x"08020304",
+						 others => x"00000000");
 process
 	begin
 		wait until CLK'event and CLK='1';

@@ -19,7 +19,8 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use IEEE.std_logic_unsigned.all;
+use IEEE.STD_LOGIC_ARITH.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -29,7 +30,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity processeur is
+entity processeur is  
     Port ( CLK_PROC : in  STD_LOGIC;
            RST_PROC : in  STD_LOGIC;
 			  
@@ -90,8 +91,8 @@ architecture Behavioral of processeur is
            A_out : out  STD_LOGIC_VECTOR (7 downto 0);
            B_out : out  STD_LOGIC_VECTOR (7 downto 0);
            C_out : out  STD_LOGIC_VECTOR (7 downto 0);
-           OP_in : in  STD_LOGIC_VECTOR (4 downto 0);
-           OP_out : out  STD_LOGIC_VECTOR (4 downto 0);
+           OP_in : in  STD_LOGIC_VECTOR (7 downto 0);
+           OP_out : out  STD_LOGIC_VECTOR (7 downto 0);
            CLK : in  STD_LOGIC);
 	END COMPONENT;
 
@@ -101,7 +102,7 @@ architecture Behavioral of processeur is
 		A : STD_LOGIC_VECTOR (7 downto 0);
 	   B : STD_LOGIC_VECTOR (7 downto 0);
 	   C : STD_LOGIC_VECTOR (7 downto 0);
-	   OP : STD_LOGIC_VECTOR (4 downto 0);
+	   OP : STD_LOGIC_VECTOR (7 downto 0);
 	end record;
 	
 	--line
@@ -113,8 +114,8 @@ architecture Behavioral of processeur is
 	--MUX
 	signal LI_DI_MUX_DI_EX : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	signal DI_EX_MUX_EX_Mem : STD_LOGIC_VECTOR(7 DOWNTO 0);
-	signal EX_Mem_MUX_Mem_RE : STD_LOGIC_VECTOR(7 DOWNTO 0);
-	signal Mem_RE_MUX_IN : STD_LOGIC_VECTOR(7 DOWNTO 0);	
+	signal EX_Mem_MUX_MemD_IN : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal MemD_OUT_MUX_MEM_RE: STD_LOGIC_VECTOR(7 DOWNTO 0);	
 	
 	--LC
 	signal DI_EX_LC_EX_MEM: STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -180,10 +181,10 @@ begin
 		B_in => INSTR(15 downto 8),
 		C_in => INSTR(7 downto 0),
 		OP_in => INSTR(31 downto 24),
-		OP_out => LI_DI2DI_EX.OP,
-		A_out => LI_DI2DI_EX.A,
-		B_out => LI_DI2DI_EX.B,
-		C_out => LI_DI2DI_EX.C
+		OP_out => DI_EX2EX_Mem.OP,
+		A_out => DI_EX2EX_Mem.A,
+		B_out => DI_EX2EX_Mem.B,
+		C_out => DI_EX2EX_Mem.C
 	);
 	--UAL
 	UAL_MAP : UAL PORT MAP (
@@ -211,7 +212,7 @@ begin
 	);
 	--Memoire de donnees
 	MemoData : BancMemoData PORT MAP (
-		Addr => EX_Mem_MUX_Mem_RE ,
+		Addr => EX_Mem_MUX_MemD_IN ,
 		INPUT =>EX_Mem2Mem_RE.B ,
 		RW => EX_MEM_LC_MEM_RE ,
 		RST => RST_PROC,
@@ -223,7 +224,7 @@ begin
 	Mem_RE :  Pipeline PORT MAP (
 			CLK => CLK_PROC,
 			A_in => EX_Mem2Mem_RE.A,
-			B_in => Mem_RE_MUX_IN,
+			B_in => MemD_OUT_MUX_MEM_RE,
 			C_in => EX_Mem2Mem_RE.C,
 			OP_in =>  EX_Mem2Mem_RE.OP,
 			OP_out => Mem_RE2Out.OP,
@@ -244,40 +245,39 @@ begin
 --	signal MEM_RE_LC_OUT: std_logic;
 	
 	--MUX 
-	LI_DI_MUX_DI_EX <= LI_DI2DI_EX.B when LI_DI2DI_EX.OP = x"06" 
-												or LI_DI2DI_EX.OP = x"07" 
+	LI_DI_MUX_DI_EX <= LI_DI2DI_EX.B when LI_DI2DI_EX.OP = x"06"  --AFC
+												or LI_DI2DI_EX.OP = x"07"  --LOAD
 												else REG_QA;
-	DI_EX_MUX_EX_MEM <= UAL_S when DI_EX2EX_MEM.OP = x"01" 
-										or DI_EX2EX_MEM.OP = x"02" 
-										or DI_EX2EX_MEM.OP = x"03" 
+	DI_EX_MUX_EX_MEM <= UAL_S when DI_EX2EX_MEM.OP = x"01"  --ADD
+										or DI_EX2EX_MEM.OP = x"02"   --MUL
+										or DI_EX2EX_MEM.OP = x"03"   --SOU
 										else DI_EX2EX_MEM.B;
 	--store --a
-	Mem_RE_MUX_IN <= EX_MEM2MEM_RE.A when EX_MEM2MEM_RE.OP = x"08" 
+	EX_Mem_MUX_MemD_IN <= EX_MEM2MEM_RE.A when EX_MEM2MEM_RE.OP = x"08" --STORE 
 														else EX_MEM2MEM_RE.B;
-	EX_Mem_MUX_Mem_RE <= MemD_OUT when EX_MEM2MEM_RE.OP = x"07" 
+	MemD_OUT_MUX_MEM_RE <= MemD_OUT when EX_MEM2MEM_RE.OP = x"07"  --LOAD
 												else EX_MEM2MEM_RE.B;
 	
 	--LC
 	DI_EX_LC_EX_MEM <= DI_EX2EX_MEM.OP(2 DOWNTO 0);
 	--ecriture dans memD
-	EX_MEM_LC_MEM_RE <= '1' when EX_MEM2MEM_RE.OP = x"08" 
+	EX_MEM_LC_MEM_RE <= '1' when EX_MEM2MEM_RE.OP = x"08" --STORE
 									else '0';
 	--ecriture ds bdr
-	MEM_RE_LC_OUT  <= '1' when Mem_RE2Out.OP = x"06" 
-										or  Mem_RE2Out.OP = x"05"
-										or Mem_RE2Out.OP = x"07"
-										or Mem_RE2Out.OP=x"01" 
-										or Mem_RE2Out.OP=x"02" 
-										or Mem_RE2Out.OP=x"03" 
+	MEM_RE_LC_OUT  <= '1' when Mem_RE2Out.OP = x"06"  --AFC
+										or  Mem_RE2Out.OP = x"05"  --COP
+										or Mem_RE2Out.OP = x"07"	--LOAD
+										or Mem_RE2Out.OP=x"01"  --ADD
+										or Mem_RE2Out.OP=x"02"  --MUL
+										or Mem_RE2Out.OP=x"03"  --SOU
 								else '0';
 
 	
-	process(CLK_PROC) 
+	process
 	begin
 		wait until CLK_PROC'event and CLK_PROC='1';
 			INPUT_ADDR<=INPUT_ADDR+x"01";
 
-		
 	end process;	
 end Behavioral;
 

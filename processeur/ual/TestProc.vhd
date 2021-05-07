@@ -88,8 +88,15 @@ BEGIN
 
       wait for CLK_PROC_period*10;
 
-      -- insert stimulus here 
-			
+	-- insert stimulus here 
+--		QA;
+--		QB;
+--		RST_PROC <= '1';
+--		addr <= x"01";
+--		INPUT <= x"0A";
+--		
+--		RW <= '0';
+--      wait for CLK_period*5;
 			
       wait;
    end process;

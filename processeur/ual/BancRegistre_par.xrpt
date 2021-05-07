@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Thu May  6 11:51:33 2021">
+  <application stringID="par" timeStamp="Fri May  7 09:35:42 2021">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -37,7 +37,7 @@
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz"/>
-          <item stringID="speed" value="4345.279 MHz"/>
+          <item stringID="speed" value="4205.955 MHz"/>
         </row>
       </table>
     </section>
@@ -2405,7 +2405,7 @@
     </task>
   </application>
 
-  <application stringID="Par" timeStamp="Thu May  6 11:51:33 2021">
+  <application stringID="Par" timeStamp="Fri May  7 09:35:42 2021">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -2437,7 +2437,7 @@
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz"/>
-          <item stringID="speed" value="3807.173 MHz"/>
+          <item stringID="speed" value="3804.049 MHz"/>
         </row>
       </table>
     </section>

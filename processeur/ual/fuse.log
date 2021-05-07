@@ -1,0 +1,35 @@
+Running: /usr/local/insa/Xilinx.ISE/13.4/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/TestProc_isim_beh.exe -prj /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/TestProc_beh.prj work.TestProc 
+ISim O.87xd (signature 0x8ddf5b5d)
+Number of CPUs detected in this system: 12
+Turning on mult-threading, number of parallel sub-compilation jobs: 24 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/ual.vhd" into library work
+Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/pipeline.vhd" into library work
+Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/BankRegistre.vhd" into library work
+Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/BancMemoInstruction.vhd" into library work
+Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/BancMemoData.vhd" into library work
+Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/processeur.vhd" into library work
+Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/TestProc.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 98540 KB
+Fuse CPU Usage: 820 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity BancMemoInstruction [bancmemoinstruction_default]
+Compiling architecture behavioral of entity pipeline [pipeline_default]
+Compiling architecture behavioral of entity BancRegistre [bancregistre_default]
+Compiling architecture behavioral of entity ual [ual_default]
+Compiling architecture behavioral of entity BancMemoData [bancmemodata_default]
+Compiling architecture behavioral of entity processeur [processeur_default]
+Compiling architecture behavior of entity testproc
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 18 VHDL Units
+Built simulation executable /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual/TestProc_isim_beh.exe
+Fuse Memory Usage: 1723196 KB
+Fuse CPU Usage: 940 ms
+GCC CPU Usage: 330 ms
