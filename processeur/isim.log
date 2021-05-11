@@ -1,5 +1,6 @@
 ISim log file
 Running: /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/TestProc_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/TestProc_isim_beh.wdb 
+INFO: There is another simulation running in the same directory. Using database file name isim1.wdb.
 ISim O.87xd (signature 0x8ddf5b5d)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -10,7 +11,7 @@ Time resolution is 1 ps
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
-at 0 ps, Instance /testproc/uut/BancR/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 0 ps, Instance /testproc/uut/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 at 0 ps, Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 0 ps, Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 0 ps, Instance /testproc/uut/MemoData/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -20,6 +21,16 @@ at 0 ps, Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|
 at 5 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 5 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 5 ns(2), Instance /testproc/uut/MemoData/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 85 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 95 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 95 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 95 ns(3), Instance /testproc/uut/MemoData/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 95 ns(3), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 95 ns(3), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 105 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 105 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+INFO: There is another simulation running in the same directory. Using database file name isim1.wdb.
 ISim O.87xd (signature 0x8ddf5b5d)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -27,7 +38,7 @@ WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for 
 This is a Lite version of ISim.
 # run 1000 ns
 Simulator is doing circuit initialization process.
-at 0 ps, Instance /testproc/uut/BancR/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 0 ps, Instance /testproc/uut/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 at 0 ps, Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 0 ps, Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 0 ps, Instance /testproc/uut/MemoData/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -37,3 +48,12 @@ at 0 ps, Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|
 at 5 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 5 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 5 ns(2), Instance /testproc/uut/MemoData/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 85 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 95 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 95 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 95 ns(3), Instance /testproc/uut/MemoData/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 95 ns(3), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 95 ns(3), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 105 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 105 ns(2), Instance /testproc/uut/BancR/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.

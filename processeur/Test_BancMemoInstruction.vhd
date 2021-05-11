@@ -42,6 +42,7 @@ ARCHITECTURE behavior OF Test_BancMemoInstruction IS
     COMPONENT BancMemoInstruction
     PORT(
          Addr : IN  std_logic_vector(7 downto 0);
+			WAITING : IN  std_logic;
          CLK : IN  std_logic;
          OUTPUT : OUT  std_logic_vector(31 downto 0)
         );
@@ -51,6 +52,7 @@ ARCHITECTURE behavior OF Test_BancMemoInstruction IS
    --Inputs
    signal Addr : std_logic_vector(7 downto 0) := (others => '0');
    signal CLK : std_logic := '0';
+	signal WAITING : std_logic := '1';
    signal RST : std_logic := '0';
 
  	--Outputs
@@ -65,6 +67,7 @@ BEGIN
    uut: BancMemoInstruction PORT MAP (
           Addr => Addr,
           CLK => CLK,
+			 WAITING => WAITING,
           OUTPUT => OUTPUT
         );
 

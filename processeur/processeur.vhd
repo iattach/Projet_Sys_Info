@@ -54,11 +54,11 @@ architecture Behavioral of processeur is
 	 END COMPONENT;
 
     COMPONENT BancMemoData
-    PORT(
+    PORT( 
          Addr : IN  std_logic_vector(7 downto 0);
          INPUT : IN  std_logic_vector(7 downto 0);
          RW : IN  std_logic;
-         RST : IN  std_logic;
+         RST : IN  std_logic; 
          CLK : IN  std_logic;
          OUTPUT : OUT  std_logic_vector(7 downto 0)
         );
@@ -79,6 +79,7 @@ architecture Behavioral of processeur is
 	 COMPONENT BancMemoInstruction
     PORT(
          Addr : IN  std_logic_vector(7 downto 0);
+			Waiting : in  STD_LOGIC;
          CLK : IN  std_logic;
          OUTPUT : OUT  std_logic_vector(31 downto 0)
         );
@@ -136,6 +137,11 @@ architecture Behavioral of processeur is
 	signal UAL_S : STD_LOGIC_VECTOR (7 downto 0);
 	--Mem Donnée out 
 	signal MemD_OUT: STD_LOGIC_VECTOR(7 DOWNTO 0);
+	--Gestion alea
+	signal lidiR: boolean;
+	signal diexW: boolean;
+	signal exmemW: boolean;
+	signal Waiting: std_logic;
 	
 begin
 
@@ -144,6 +150,7 @@ begin
 	--Memoire instruction
 	Memoire_Instr : BancMemoInstruction PORT MAP (
 		ADDR => INPUT_ADDR,
+		Waiting => Waiting,
 		CLK => CLK_PROC,
 		OUTPUT => INSTR
 	);
@@ -247,6 +254,7 @@ begin
 	--MUX 
 	LI_DI_MUX_DI_EX <= LI_DI2DI_EX.B when LI_DI2DI_EX.OP = x"06"  --AFC
 												or LI_DI2DI_EX.OP = x"07"  --LOAD
+												or LI_DI2DI_EX.OP = x"08"	--STR
 												else REG_QA;
 	DI_EX_MUX_EX_MEM <= UAL_S when DI_EX2EX_MEM.OP = x"01"  --ADD
 										or DI_EX2EX_MEM.OP = x"02"   --MUL
@@ -272,12 +280,27 @@ begin
 										or Mem_RE2Out.OP=x"03"  --SOU
 								else '0';
 
-	
+	lidiR <= LI_DI2DI_EX.Op /= "UUUUU" and LI_DI2DI_EX.Op /= x"00" 
+				and LI_DI2DI_EX.Op /= x"06"  --AFC
+				and LI_DI2DI_EX.Op /= x"01"; --ADD
+	diexW <= DI_EX2EX_Mem.Op /= "UUUUU" and DI_EX2EX_Mem.Op /= x"00" 
+				and DI_EX2EX_Mem.Op /= x"08";	--STR
+	exmemW <= EX_Mem2Mem_RE.Op /= "UUUUU" and EX_Mem2Mem_RE.Op /= x"00" 
+				and EX_Mem2Mem_RE.Op /= x"08"; --STR
+	Waiting <= '1' when (lidiR and diexW  --not READING or WRITING
+								and (LI_DI2DI_EX.B = DI_EX2EX_Mem.A	--before BR and after BR
+								or LI_DI2DI_EX.C = DI_EX2EX_Mem.A))	--before BR and after BR
+							or (lidiR and exmemW --not READING or WRITING
+								and (LI_DI2DI_EX.B = EX_Mem2Mem_RE.A --before BR and after UAL
+								or LI_DI2DI_EX.C = EX_Mem2Mem_RE.A)) --before BR and after UAL
+					else '0';
+					
 	process
 	begin
 		wait until CLK_PROC'event and CLK_PROC='1';
+		if(Waiting = '0' or true) then
 			INPUT_ADDR<=INPUT_ADDR+x"01";
-
+		end if;
 	end process;	
 end Behavioral;
 

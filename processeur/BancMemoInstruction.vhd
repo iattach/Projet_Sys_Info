@@ -31,6 +31,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity BancMemoInstruction is
     Port ( Addr : in  STD_LOGIC_VECTOR (7 downto 0);
+			  WAITING : in  STD_LOGIC;
            CLK : in  STD_LOGIC;
            OUTPUT : out  STD_LOGIC_VECTOR (31 downto 0));
 end BancMemoInstruction;
@@ -48,11 +49,16 @@ begin
 						 4 => x"060A050A",
 						 5 => x"070A050A",
 						 6 => x"080A050A",
-						 others => x"00000000");
+						 others => "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
+										 
 process
 	begin
 		wait until CLK'event and CLK='1';
-			OUTPUT<= instruction(to_integer(unsigned(Addr)));
+		if WAITING = '1' and false then
+			OUTPUT<= "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU";
+		else
+		   OUTPUT<= instruction(to_integer(unsigned(Addr)));
+		end if;
 	end process;
 end Behavioral;
 

@@ -99,6 +99,9 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="pipeline_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="processeur.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="processeur.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="processeur.xst"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="processeur_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="processeur_stx_beh.prj"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="ual.bld"/>
@@ -142,7 +145,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1620722244" xil_pn:in_ck="-7391979892514622657" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1620722244">
+    <transform xil_pn:end_ts="1620727585" xil_pn:in_ck="-7391979892514622657" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1620727585">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="BancMemoData.vhd"/>
@@ -157,11 +160,11 @@
       <outfile xil_pn:name="processeur.vhd"/>
       <outfile xil_pn:name="ual.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1620382448" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:start_ts="1620382448">
+    <transform xil_pn:end_ts="1620727631" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="2271064245959578826" xil_pn:start_ts="1620727631">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1620382448" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:start_ts="1620382448">
+    <transform xil_pn:end_ts="1620727631" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="7119500262889520456" xil_pn:start_ts="1620727631">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -169,7 +172,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1620722244" xil_pn:in_ck="-7391979892514622657" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1620722244">
+    <transform xil_pn:end_ts="1620727585" xil_pn:in_ck="-7391979892514622657" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1620727585">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="BancMemoData.vhd"/>
@@ -184,7 +187,7 @@
       <outfile xil_pn:name="processeur.vhd"/>
       <outfile xil_pn:name="ual.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1620722245" xil_pn:in_ck="-7391979892514622657" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3946291049321764108" xil_pn:start_ts="1620722244">
+    <transform xil_pn:end_ts="1620727632" xil_pn:in_ck="-7391979892514622657" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3946291049321764108" xil_pn:start_ts="1620727631">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="TestProc_beh.prj"/>
@@ -194,7 +197,7 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1620722245" xil_pn:in_ck="-1888247421046879058" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="7761336041319668737" xil_pn:start_ts="1620722245">
+    <transform xil_pn:end_ts="1620727633" xil_pn:in_ck="-1888247421046879058" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="7761336041319668737" xil_pn:start_ts="1620727632">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="TestProc_isim_beh.wdb"/>
