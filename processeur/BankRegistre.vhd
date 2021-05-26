@@ -59,10 +59,16 @@ process
 					BR(conv_integer(AddrW))<= DATA;
 				end if;
 			end if;
+			--QA <= DATA when (W='1' and AddrW=AddrA) else 
+				--BR(conv_integer(AddrA));
+			--QB <= DATA when (W='1' and AddrW=AddrB) else 
+				--BR(conv_integer(AddrB));
+		
 	end process;
-	QA <= DATA when (W='1' and AddrW=AddrA) else 
-			BR(conv_integer(AddrA));
-	QB <= DATA when (W='1' and AddrW=AddrB) else 
-			BR(conv_integer(AddrB));
+			QA <= BR(conv_integer(AddrW)) when (W='1' and AddrW=AddrA) else 
+				BR(conv_integer(AddrA));
+			QB <= BR(conv_integer(AddrB)) when (W='1' and AddrW=AddrB) else 
+				BR(conv_integer(AddrB));
+
 end Behavioral;
 

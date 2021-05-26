@@ -121,6 +121,32 @@ BEGIN
 		addrW <= x"A";
 		wait for CLK_period*3;
 		
+		--write R14
+		W <= '1';
+		DATA <= x"03";
+		addrW <= x"E";
+		wait for CLK_period*3;
+		
+		--write R15
+		W <= '1';
+		DATA <= x"05";
+		addrW <= x"F";
+		wait for CLK_period*3;
+		
+		--read R14 et R15
+		W <= '1';
+		DATA <= x"0E";
+		addrW <= x"F";
+		wait for CLK_period*3;
+		
+		-- reset
+		W <= '0';
+		rst <= '0';
+		wait for CLK_period*3;
+		rst <= '1';
+		wait for CLK_period*3;
+		
+				
 
       wait;
    end process;

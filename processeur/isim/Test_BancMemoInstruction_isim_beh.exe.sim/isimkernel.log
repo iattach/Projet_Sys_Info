@@ -1,13 +1,13 @@
 Command line:
    Test_BancMemoInstruction_isim_beh.exe
      -simmode  gui
-     -simrunnum  1
-     -socket  37543
+     -simrunnum  0
+     -socket  48781
 
-Tue May 11 12:06:28 2021
+Wed May 26 17:54:42 2021
 
 
- Elaboration Time: 0.01 sec
+ Elaboration Time: 0 sec
 
  Current Memory Usage: 187.466 Meg
 
@@ -21,9 +21,9 @@ Tue May 11 12:06:28 2021
  Total Scalar Nets and Variables : 8737
 Total Line Count : 17
 
- Total Simulation Time: 0.02 sec
+ Total Simulation Time: 0.01 sec
 
  Current Memory Usage: 262.967 Meg
 
-Tue May 11 12:06:41 2021
+Wed May 26 17:54:48 2021
 

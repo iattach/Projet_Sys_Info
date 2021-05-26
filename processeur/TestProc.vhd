@@ -51,7 +51,7 @@ ARCHITECTURE behavior OF TestProc IS
 
    --Inputs
    signal CLK_PROC : std_logic := '0';
-   signal RST_PROC : std_logic := '0';
+   signal RST_PROC : std_logic := '1';
 
  	--Outputs
    signal QA : std_logic_vector(7 downto 0);

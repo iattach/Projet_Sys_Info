@@ -101,34 +101,35 @@ BEGIN
 			Ctrl_Alu <= "001";
 			wait for CLK_period*5;		
 			
-			-- sub
+			-- mul
 			A <= x"05";
 			B <= x"04";
 			Ctrl_Alu <= "010";
 			wait for CLK_period*5;		
 			
-			-- mul
+			-- sub
 			A <= x"05";
 			B <= x"03";
 			Ctrl_Alu <= "011";
-			wait for CLK_period*5;			
-			
-			-- N
-			A <= x"02";
-			B <= x"03";
-			Ctrl_Alu <= "010";
-			wait for CLK_period*5;			
+			wait for CLK_period*5;
+
+			-- sub avec N == 1
+			A <= x"03";
+			B <= x"05";
+			Ctrl_Alu <= "011";
+			wait for CLK_period*5;
+					
 			
 			-- O/C
-			A <= x"FF";
-			B <= x"01";
-			Ctrl_Alu <= "001";
+			A <= x"FE";
+			B <= x"FE";
+			Ctrl_Alu <= "010";
 			wait for CLK_period*5;			
 			
 			-- Z
 			A <= x"05";
 			B <= x"05";
-			Ctrl_Alu <= "010";
+			Ctrl_Alu <= "011";
 			wait for CLK_period*5;
 			
 			

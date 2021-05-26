@@ -1,9 +1,6 @@
-set -tmpdir "xst/projnav.tmp"
-set -xsthdpdir "xst"
-run
--ifn ual.prj
--ofn ual
--ofmt NGC
+set -tmpdir "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/xst/projnav.tmp"
+set -xsthdpdir "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/xst"
+run -compileonly yes
 -p xc6slx16-3-csg324
 -top ual
 -opt_mode Speed
@@ -50,3 +47,4 @@ run
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
+-ifn ual.prj

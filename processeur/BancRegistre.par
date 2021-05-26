@@ -1,7 +1,7 @@
 Release 13.4 par O.87xd (lin64)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-insa-11282::  Fri May 07 09:35:40 2021
+insa-11283::  Wed May 26 17:08:33 2021
 
 par -w -intstyle ise -ol high -mt off BancRegistre_map.ncd BancRegistre.ncd
 BancRegistre.pcf 
@@ -33,21 +33,21 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                         84 out of   9,112    1%
-    Number used as logic:                       84 out of   9,112    1%
-      Number using O6 output only:              68
+  Number of Slice LUTs:                        110 out of   9,112    1%
+    Number used as logic:                      110 out of   9,112    1%
+      Number using O6 output only:              98
       Number using O5 output only:               0
-      Number using O5 and O6:                   16
+      Number using O5 and O6:                   12
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    58 out of   2,278    2%
+  Number of occupied Slices:                    62 out of   2,278    2%
   Nummber of MUXCYs used:                        0 out of   4,556    0%
-  Number of LUT Flip Flop pairs used:          207
-    Number with an unused Flip Flop:            79 out of     207   38%
-    Number with an unused LUT:                 123 out of     207   59%
-    Number of fully used LUT-FF pairs:           5 out of     207    2%
+  Number of LUT Flip Flop pairs used:          231
+    Number with an unused Flip Flop:           103 out of     231   44%
+    Number with an unused LUT:                 121 out of     231   52%
+    Number of fully used LUT-FF pairs:           7 out of     231    3%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -95,29 +95,29 @@ Finished initial Timing Analysis.  REAL time: 2 secs
 Starting Router
 
 
-Phase  1  : 789 unrouted;      REAL time: 2 secs 
+Phase  1  : 971 unrouted;      REAL time: 2 secs 
 
-Phase  2  : 740 unrouted;      REAL time: 2 secs 
+Phase  2  : 926 unrouted;      REAL time: 2 secs 
 
-Phase  3  : 345 unrouted;      REAL time: 2 secs 
+Phase  3  : 508 unrouted;      REAL time: 2 secs 
 
-Phase  4  : 345 unrouted; (Par is working to improve performance)     REAL time: 2 secs 
+Phase  4  : 508 unrouted; (Par is working to improve performance)     REAL time: 2 secs 
 
 Updating file: BancRegistre.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
-Total REAL time to Router completion: 3 secs 
-Total CPU time to Router completion: 2 secs 
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
+Total REAL time to Router completion: 4 secs 
+Total CPU time to Router completion: 4 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -146,10 +146,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 3 secs 
-Total CPU time to PAR completion: 3 secs 
+Total REAL time to PAR completion: 4 secs 
+Total CPU time to PAR completion: 4 secs 
 
-Peak Memory Usage:  599 MB
+Peak Memory Usage:  601 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

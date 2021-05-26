@@ -103,5 +103,6 @@ BEGIN
 --		for i in 0 to 15 loop
 --			ADDR<= ADDR + x"1";
 --		end loop;
+		
       wait;
    end process;END;

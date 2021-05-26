@@ -1,0 +1,7 @@
+[Inputs]
+CLK_PROC
+RST_PROC
+[Outputs]
+=QA[7:0]=
+=QB[7:0]=
+[BiDir]

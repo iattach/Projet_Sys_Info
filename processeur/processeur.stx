@@ -5,14 +5,14 @@ Parameter TMPDIR set to /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/x
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Parameter xsthdpdir set to /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Reading design: processeur.prj
@@ -64,12 +64,12 @@ Parsing architecture <Behavioral> of entity <processeur>.
 
 
 Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 2.14 secs
+Total CPU time to Xst completion: 2.10 secs
  
 --> 
 
 
-Total memory usage is 303020 kilobytes
+Total memory usage is 303032 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

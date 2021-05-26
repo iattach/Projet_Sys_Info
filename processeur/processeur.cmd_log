@@ -1,0 +1,2 @@
+vhdtdtfi -lib work ual.vhd -lib work pipeline.vhd -lib work BankRegistre.vhd -lib work BancMemoInstruction.vhd -lib work BancMemoData.vhd -lib work processeur.vhd -prj processeur -o processeur.spl -module processeur -template /usr/local/insa/Xilinx.ISE/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 processeur.spl /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/processeur.sym 

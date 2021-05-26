@@ -42,13 +42,14 @@ type table is array (0 to 255) of STD_LOGIC_VECTOR(31 downto 0);
 signal instruction: table ;
 
 begin
-   instruction <= (0 => x"010A050A", 
-						 1 => x"020A050A",
-						 2 => x"030A050A",
-						 3 => x"050A050A",
-						 4 => x"060A050A",
-						 5 => x"070A050A",
-						 6 => x"080A050A",
+   instruction <= (
+						 0 => x"06010A00", --AFC 1 10
+						 5 => x"05000100", --COP 0 1
+						 6 => x"08020500", --STR 2 5
+						 7 => x"07010200", --LOAD 1 2
+						 12 => x"01010001", --ADD 1 0 1
+						 17 => x"02000100", --MUL 0 1 0
+						 22 => x"03000001", --SUB 0 0 1
 						 others => "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
 										 
 process

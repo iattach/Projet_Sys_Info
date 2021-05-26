@@ -1,0 +1,6 @@
+work	"BancMemoData.vhd"
+work	"BancMemoInstruction.vhd"
+work	"BankRegistre.vhd"
+work	"pipeline.vhd"
+work	"processeur.vhd"
+work	"ual.vhd"

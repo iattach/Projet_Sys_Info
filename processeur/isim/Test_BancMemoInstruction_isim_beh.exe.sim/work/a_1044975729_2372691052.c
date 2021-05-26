@@ -203,7 +203,7 @@ LAB8:    xsi_set_current_line(97, ng0);
     t7 = *((char **)t6);
     *((unsigned char *)t7) = (unsigned char)3;
     xsi_driver_first_trans_fast(t2);
-    xsi_set_current_line(106, ng0);
+    xsi_set_current_line(107, ng0);
 
 LAB14:    *((char **)t1) = &&LAB15;
     goto LAB1;

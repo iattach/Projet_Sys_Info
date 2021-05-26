@@ -1,7 +1,7 @@
 Running: /usr/local/insa/Xilinx.ISE/13.4/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/TestProc_isim_beh.exe" -prj "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/TestProc_beh.prj" "work.TestProc" 
 ISim O.87xd (signature 0x8ddf5b5d)
-Number of CPUs detected in this system: 6
-Turning on mult-threading, number of parallel sub-compilation jobs: 12 
+Number of CPUs detected in this system: 12
+Turning on mult-threading, number of parallel sub-compilation jobs: 24 
 Determining compilation order of HDL files
 Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/ual.vhd" into library work
 Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/pipeline.vhd" into library work
@@ -13,7 +13,7 @@ Parsing VHDL file "/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/TestPr
 Starting static elaboration
 Completed static elaboration
 Fuse Memory Usage: 98532 KB
-Fuse CPU Usage: 820 ms
+Fuse CPU Usage: 770 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
@@ -27,8 +27,9 @@ Compiling architecture behavioral of entity BancMemoData [bancmemodata_default]
 Compiling architecture behavioral of entity processeur [processeur_default]
 Compiling architecture behavior of entity testproc
 Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
 Compiled 18 VHDL Units
 Built simulation executable /home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/TestProc_isim_beh.exe
-Fuse Memory Usage: 936816 KB
-Fuse CPU Usage: 950 ms
-GCC CPU Usage: 100 ms
+Fuse Memory Usage: 1723260 KB
+Fuse CPU Usage: 870 ms
+GCC CPU Usage: 80 ms
