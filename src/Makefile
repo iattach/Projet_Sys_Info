@@ -5,7 +5,7 @@ all:
 	gcc -c -g lex.yy.c -Wall
 	gcc -c  -g table_symbol.c -Wall 
 	gcc -Wall -g yacc_asm.tab.o lex.yy.o table_symbol.o -o comp_all
-	./comp_all main_asm.c main.asm
+	./comp_all main_asm.c main.txt
 test: 
 	bison -d yacc.y
 	flex al_lex.l

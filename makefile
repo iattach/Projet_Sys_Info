@@ -1,14 +1,10 @@
-SRCC:= ./src/*.c
+all: 
+	$(MAKE) -C interpreter_asm
+	$(MAKE) -C src
 
-all: interpreter
-
-interpreter: ./src/interpreter.y ./src/interpreter.l ./src/instructions.c
-	yacc -d ./src/interpreter.y
-	lex ./src/interpreter.l
-	gcc lex.yy.c y.tab.c ./src/instructions.c -Isrc -o interpreter
-
-run: interpreter
-	./interpreter < input.txt
-
+run:
+	$(MAKE) -C interpreter_asm run
+	
 clean:
-	rm -f lex.yy.c interpreter y.tab.h y.tab.c *.o
+	$(MAKE) -C interpreter_asm clean
+	$(MAKE) -C src clean

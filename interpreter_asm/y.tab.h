@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_YY_AS_TAB_H_INCLUDED
-# define YY_YY_AS_TAB_H_INCLUDED
+#ifndef YY_YY_Y_TAB_H_INCLUDED
+# define YY_YY_Y_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -45,26 +45,46 @@ extern int yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    tNB = 258,
-    tADD = 259,
-    tSUB = 260,
-    tOB = 261,
-    tCB = 262,
-    tPV = 263,
-    tERROR = 264
+    tADD = 258,
+    tMUL = 259,
+    tSOU = 260,
+    tDIV = 261,
+    tCOP = 262,
+    tAFC = 263,
+    tJMP = 264,
+    tJMF = 265,
+    tINF = 266,
+    tSUP = 267,
+    tEQU = 268,
+    tPRI = 269,
+    tNB = 270
   };
 #endif
+/* Tokens.  */
+#define tADD 258
+#define tMUL 259
+#define tSOU 260
+#define tDIV 261
+#define tCOP 262
+#define tAFC 263
+#define tJMP 264
+#define tJMF 265
+#define tINF 266
+#define tSUP 267
+#define tEQU 268
+#define tPRI 269
+#define tNB 270
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 
 union YYSTYPE
 {
-#line 1 "as.y" /* yacc.c:1909  */
+#line 11 "./src/interpreter.y" /* yacc.c:1909  */
 
-	int nombre;
+    int nb;
 
-#line 68 "as.tab.h" /* yacc.c:1909  */
+#line 88 "y.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -77,4 +97,4 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_AS_TAB_H_INCLUDED  */
+#endif /* !YY_YY_Y_TAB_H_INCLUDED  */
