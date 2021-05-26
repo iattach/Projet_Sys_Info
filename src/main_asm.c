@@ -1,12 +1,10 @@
 main()
-{ int i, j,k ,r;
+{ int i;
 i =3 ;
-j=4 ;
-k=8 ;
 printf (i) ;
-r=(i+j)*(i+k/j) ;
-printf ( r ) ;
-if(i==3){i=i+1;}
+i=(i+i)*(i-i/i) ;
+printf (i) ;
 if(i==3){i=i+1;}else{i=i+2;}
-while(i<15){printf(i);i=i+3;}
+while(i<15){i=i+3;}
+printf(i);
 }
