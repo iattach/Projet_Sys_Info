@@ -9,13 +9,13 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>BancR - BancRegistre - Behavioral (/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/BankRegistre.vhd)</SelectedItem>
+         <SelectedItem>BancR - BancRegistre - Behavioral (/home/yu_yang/Bureau/git_em/Projet_Sys_Info/test/processeur/BankRegistre.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000448000000020000000000000000000000000200000064ffffffff000000810000000300000002000004480000000100000003000000000000000100000003</ViewHeaderState>
-      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>BancR - BancRegistre - Behavioral (/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/BankRegistre.vhd)</CurrentItem>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000046d000000020000000000000000000000000200000064ffffffff0000008100000003000000020000046d0000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>BancR - BancRegistre - Behavioral (/home/yu_yang/Bureau/git_em/Projet_Sys_Info/test/processeur/BankRegistre.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -42,7 +42,7 @@
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000413000000040101000100000000000000000000000064ffffffff000000810000000000000004000002b800000001000000000000006900000001000000000000008300000001000000000000006f0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/BancMemoData.vhd</CurrentItem>
+      <CurrentItem>/home/yu_yang/Bureau/git_em/Projet_Sys_Info/test/processeur/BancMemoData.vhd</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -66,13 +66,13 @@
          <ClosedNode>/Test_ual - behavior |home|yu_yang|Bureau|git_em|Projet_Sys_Info|processeur|Test_ual.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>TestProc - behavior (/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/TestProc.vhd)</SelectedItem>
+         <SelectedItem>Unassigned User Library Modules</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000003ff000000020000000000000000000000000200000064ffffffff000000810000000300000002000003ff0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000481000000020000000000000000000000000200000064ffffffff000000810000000300000002000004810000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>TestProc - behavior (/home/yu_yang/Bureau/git_em/Projet_Sys_Info/processeur/TestProc.vhd)</CurrentItem>
+      <CurrentItem>Unassigned User Library Modules</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>

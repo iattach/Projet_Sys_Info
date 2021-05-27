@@ -1,6 +1,8 @@
 %{
     #include <stdlib.h>
+    #include <string.h>
     #include "yacc_asm.tab.h"
+    #include "table_symbol.h"
 %}
 
 SPACE       [" "]+
@@ -50,7 +52,7 @@ ALPHANUM    {ALPHABET}({ALPHABET}|{NUMBER}|"_")*
              return (tNUMBER);}
 {REAL}      {yylval.reel=atof(yytext);
              return (tREAL);} 
-{ALPHANUM}  {yylval.str=yytext;
+{ALPHANUM}  {yylval.str = strdup(yytext);
              return (tVAR);}
 
 
