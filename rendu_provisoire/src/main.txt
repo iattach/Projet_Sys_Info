@@ -1,0 +1,50 @@
+	AFC 4 3
+	COP 0 4
+	AFC 4 4
+	COP 1 4
+	AFC 4 8
+	COP 2 4
+	PRI 0
+	COP 4 0
+	COP 5 1
+	ADD 4 4 5
+	COP 5 0
+	COP 6 2
+	COP 7 1
+	DIV 6 6 7
+	ADD 5 5 6
+	MUL 4 4 5
+	COP 3 4
+	PRI 3
+	COP 4 0
+	AFC 5 3
+	EQU 4 4 5
+	JMF 4 27
+	COP 4 0
+	AFC 5 1
+	ADD 4 4 5
+	COP 0 4
+	JMP 27
+	COP 4 0
+	AFC 5 3
+	EQU 4 4 5
+	JMF 4 36
+	COP 4 0
+	AFC 5 1
+	ADD 4 4 5
+	COP 0 4
+	JMP 40
+	COP 4 0
+	AFC 5 2
+	ADD 4 4 5
+	COP 0 4
+	COP 4 0
+	AFC 5 15
+	INF 4 4 5
+	JMF 4 50
+	PRI 0
+	COP 4 0
+	AFC 5 3
+	ADD 4 4 5
+	COP 0 4
+	JMP 40
